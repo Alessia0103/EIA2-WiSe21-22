@@ -1,0 +1,309 @@
+html{
+    width: 1500px;
+    height: 800px;
+    background: url("brick.jpeg") no-repeat;
+    background-size: cover;
+}
+.container {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+.canvas {
+    align-items: center;
+    justify-content: center;
+}
+.header {
+    top:-20px;
+    margin-left: auto;
+	margin-right: auto;
+	max-width: -webkit-max-content;  /* für Safari */	
+	max-width: -moz-max-content;     /* für Firefox */
+	text-align: center;
+    opacity: 100%;
+    font-size: 70px;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+#salad-theke{
+    top:160px;
+    width: 80px;
+    left: 660px;
+    position: absolute;
+    display: flex;
+    margin-bottom:0px;
+    opacity: 100%;
+    cursor: pointer;
+    justify-content: center;
+}
+.salad{
+    top:160px;
+    width: 25px;
+    left: 730px;
+    position: absolute;
+    display: flex;
+    font-size: 20px;
+    background-color: #73645F;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+.is-hidden {
+    display:none !important;
+} 
+#buttonsal {
+    top:160px;
+    width: 80px;
+    left: 145px;
+    position: absolute;
+    display: flex;
+    margin-bottom:0px;
+    opacity: 100%;
+    cursor: pointer;
+    justify-content: center;
+
+}
+#salad-küche{
+    top:160px;
+    width: 80px;
+    left: 145px;
+    position: absolute;
+    display:flex ;
+    margin-bottom:0px;
+    opacity: 70%;
+    justify-content: center;
+}
+
+#counter{
+    top:160px;
+    width: 80px;
+    left: 655px;
+    position: absolute;
+    display: flex;
+    margin-bottom:0px;
+    opacity: 100%;
+    cursor: pointer;
+    justify-content: center;
+
+}
+.zwiebel{
+    top:280px;
+    width: 25px;
+    left: 730px;
+    position: absolute;
+    display: flex;
+    font-size: 20px;
+    background-color: #73645F;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+#zwiebel-küche{
+    top:280px;
+    width: 80px;
+    left: 145px;
+    position: absolute;
+    display:flex ;
+    margin-bottom:0px;
+    opacity: 70%;
+    justify-content: center;
+}
+#zwiebel-theke{
+    top:280px;
+    width: 80px;
+    left: 655px;
+    position: absolute;
+    display: flex;
+    margin-bottom:0px;
+    opacity: 100%;
+    cursor: pointer;
+    justify-content: center;
+
+}
+#counterzwi{
+    top:280px;
+    width: 80px;
+    left: 655px;
+    position: absolute;
+    display: flex;
+    margin-bottom:0px;
+    opacity: 100%;
+    cursor: pointer;
+    justify-content: center;
+}
+#buttonzwi{
+    top:280px;
+    width: 80px;
+    left: 145px;
+    position: absolute;
+    display: flex;
+    margin-bottom:0px;
+    opacity: 100%;
+    cursor: pointer;
+    justify-content: center;
+}
+.gurke{
+    top:405px;
+    width: 25px;
+    left: 730px;
+    position: absolute;
+    display: flex;
+    font-size: 20px;
+    background-color: #73645F;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+#gurke-küche{
+    top:405px;
+    width: 80px;
+    left: 145px;
+    position: absolute;
+    display:flex ;
+    margin-bottom:0px;
+    opacity: 70%;
+    justify-content: center;
+}
+#gurke-theke{
+    top:405px;
+    width: 80px;
+    left: 655px;
+    position: absolute;
+    display: flex;
+    margin-bottom:0px;
+    opacity: 100%;
+    cursor: pointer;
+    justify-content: center;
+
+}
+#countergur{
+    top:405px;
+    width: 75px;
+    left: 655px;
+    position: absolute;
+    display: flex;
+    margin-bottom:0px;
+    opacity: 100%;
+    cursor: pointer;
+    justify-content: center;
+}
+#buttongur{
+    top:405px;
+    width: 80px;
+    left: 145px;
+    position: absolute;
+    display: flex;
+    margin-bottom:0px;
+    opacity: 100%;
+    cursor: pointer;
+    justify-content: center;
+}
+.tomate{
+    top:520px;
+    width: 25px;
+    left: 730px;
+    position: absolute;
+    display: flex;
+    font-size: 20px;
+    background-color: #73645F;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+#tomate-küche{
+    top:520px;
+    width: 80px;
+    left: 145px;
+    position: absolute;
+    display:flex ;
+    margin-bottom:0px;
+    opacity: 70%;
+    justify-content: center;
+}
+#tomate-theke{
+    top:520px;
+    width: 80px;
+    left: 655px;
+    position: absolute;
+    display: flex;
+    margin-bottom:0px;
+    opacity: 100%;
+    cursor: pointer;
+    justify-content: center;
+
+}
+#countertom{
+    top:520px;
+    width: 75px;
+    left: 655px;
+    position: absolute;
+    display: flex;
+    margin-bottom:0px;
+    opacity: 100%;
+    cursor: pointer;
+    justify-content: center;
+}
+#buttontom{
+    top:520px;
+    width: 80px;
+    left: 145px;
+    position: absolute;
+    display: flex;
+    margin-bottom:0px;
+    opacity: 100%;
+    cursor: pointer;
+    justify-content: center;
+}
+.fleisch{
+    top:160px;
+    width: 25px;
+    left: 605px;
+    position: absolute;
+    display: flex;
+    font-size: 20px;
+    background-color: #73645F;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+#fleisch-küche{
+    top:640px;
+    width: 80px;
+    left: 145px;
+    position: absolute;
+    display:flex ;
+    margin-bottom:0px;
+    opacity: 70%;
+    justify-content: center;
+}
+#fleisch-theke{
+    top:160px;
+    width: 80px;
+    left: 530px;
+    position: absolute;
+    display: flex;
+    margin-bottom:0px;
+    opacity: 100%;
+    cursor: pointer;
+    justify-content: center;
+
+}
+#counterflei{
+    top:160px;
+    width: 75px;
+    left: 530px;
+    position: absolute;
+    display: flex;
+    margin-bottom:0px;
+    opacity: 100%;
+    cursor: pointer;
+    justify-content: center;
+}
+#buttonflei{
+    top:640px;
+    width: 80px;
+    left: 145px;
+    position: absolute;
+    display: flex;
+    margin-bottom:0px;
+    opacity: 100%;
+    cursor: pointer;
+    justify-content: center;
+}
