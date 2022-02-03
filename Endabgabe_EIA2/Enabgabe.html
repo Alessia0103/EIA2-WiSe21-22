@@ -4,18 +4,60 @@
     <meta charset="UTF-8">
     <title>Endabgabe Dönerbude</title>
     <link type="text/css" rel="stylesheet" href="css.css">
+    <script src="vector.js" defer></script>
+    <script src="movable.js" defer></script>
     <script src="main.js" defer></script>
+    <script src="gemüse.js" defer></script>
     <script src="Doener.js" defer></script>
+    <script src="ali.js" defer></script>
+   
     
     
 </head>
 <body>
     <div class="header">DÖNERBUDEN SIMULATOR</div>
+
+
         
    
     <div class="container">
+        <canvas id="canvas" width="1300" height="700"></canvas>
+    
+
+    <div class="settingscontainer">
+        <div id="settings">
+            <h2>Wilkommen!!<br>Konfiguriere hier deine Simulation.</h2>
+            <form>
+                <fieldset>
+                    <legend> <b>Mitarbeiter im Laden</b> </legend>
+                    <input type="range" id="member" name="member" value="1" min="1" max="3">
+                </fieldset>
+    
+                <fieldset>
+                    <legend> <b>Kunden pro Tag</b> </legend>
+                    <input type="range" id="customer" name="customer" value="5" min="4" max="6">
+                    <br>
+                </fieldset>
+    
+            
+                <fieldset>
+                        <legend> <b>Farben</b> </legend>
+            
+                            <label for="mitarbeiter">Mitarbeiter</label>
+                            <input type="color" id="mitarbeiterFarbe" name="memberColorPicker"  value="#66b2ff">
+                            <br>
+                            <label for="teamBcolour">Kunden </label>
+                            <input type="color" id="kundenFarbe" name="customerColorPicker"  value="#ff3333">
+                            <br>
+                </fieldset>
+                <div id="startbutton">Start!</div> 
+            </form>
+            
+        </div>
+        </div>
         
         <!--- Salat--->
+        <div id="gemuese" class="is-hidden">
         <div class="salad">10</div>
         <img id="salad-küche" src="salad.png">
         <img id="buttonsal" class="is-hidden"src="web-button.png" >
@@ -45,10 +87,8 @@
          <img id="buttonflei" class="is-hidden"src="web-button.png" >
          <img id="fleisch-theke" src="meat.png">
          <img id="counterflei" class="is-hidden" src="ubrige-zeit.png">
-
-
-
-        <canvas id="canvas" width="1300" height="700"></canvas>
+        </div>
+    </div>
          
 </div>
 </body>
