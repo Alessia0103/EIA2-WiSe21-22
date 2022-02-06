@@ -16,13 +16,11 @@ namespace  Doenerbude {
     const doneButtonZwi: Element = (document.getElementById("buttonzwi")as HTMLInputElement);
     const plus: Element = (document.getElementById("plus")as HTMLInputElement);
     const text: Element = (document.getElementById("text-redo")as HTMLInputElement);
-    let images: string[] = ["salad.png", "onion.png", "cucumber.png", "tomato.png", "meat.png" ];
-    let image: number[] = [Math.floor(Math.random() *  images.length)];
+    //let images: string[] = ["salad.png", "onion.png", "cucumber.png", "tomato.png", "meat.png" ];
+    //let image: number[] = [Math.floor(Math.random() *  images.length)];
     let buttonClick: number = 2;
     let buttonDone: Boolean = false;
-    let pushed: Boolean = false;
-
-    var zutate: number[] = [];
+    //let pushed: Boolean = false;
     //let draggedPlayer: Ali | undefined;
     //let listenToMouseMove: boolean = false; // For switching the player
 
@@ -40,11 +38,7 @@ namespace  Doenerbude {
     let moveables: Moveable[] = [];
     //let allPlayers: Ali[] = [];
     
-    plus.addEventListener("click", function(): void {
-    console.log("HI");
-
-    let imag: HTMLElement | null = document.getElementById("ausgabe").innerHTML = "<img src=" + image + ">"; 
-     });
+    
 
     window.addEventListener("load", handleLoad); 
 
@@ -178,8 +172,30 @@ namespace  Doenerbude {
     redo.addEventListener("click", function (): void {
     location.reload();
 });
+
+    plus.addEventListener("click", function(): void {
+    let images: string [] =  new Array("cucumber.png", "tomato.png", "meat.png", "onion.png", "salad.png");
+    let index: number = 0;
+    const zutat1: Element = (document.getElementById("random_img")as HTMLInputElement);
     
+    index = Math.floor(Math.random() * images.length);
+    (document.getElementById("random_img")as HTMLInputElement).src = images[index];
+    zutat1.classList.remove("is-hidden");
+
+    let images2: string [] =  new Array("salad.png", "cucumber.png", "tomato.png", "meat.png", "onion.png");
+    let index2: number = 0;
+    const zutat2: Element = (document.getElementById("random_img2")as HTMLInputElement);
     
+    index2 = Math.floor(Math.random() * images2.length);
+    (document.getElementById("random_img2")as HTMLInputElement).src = images2[index2];
+    zutat2.classList.remove("is-hidden");
+   
+
+
+    
+     });
+    
+
     
     }
    

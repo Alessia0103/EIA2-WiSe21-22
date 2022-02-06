@@ -14,12 +14,10 @@ var Doenerbude;
     const doneButtonZwi = document.getElementById("buttonzwi");
     const plus = document.getElementById("plus");
     const text = document.getElementById("text-redo");
-    let images = ["salad.png", "onion.png", "cucumber.png", "tomato.png", "meat.png"];
-    let image = [Math.floor(Math.random() * images.length)];
+    //let images: string[] = ["salad.png", "onion.png", "cucumber.png", "tomato.png", "meat.png" ];
+    //let image: number[] = [Math.floor(Math.random() *  images.length)];
     let buttonClick = 2;
     let buttonDone = false;
-    let pushed = false;
-    var zutate = [];
     Doenerbude.playerInformation = [
         //Mitarbeiter
         { x: 135, y: 275, team: "Ali 1" },
@@ -27,10 +25,6 @@ var Doenerbude;
     ];
     let moveables = [];
     //let allPlayers: Ali[] = [];
-    plus.addEventListener("click", function () {
-        console.log("HI");
-        let imag = document.getElementById("ausgabe").innerHTML = "<img src=" + image + ">";
-    });
     window.addEventListener("load", handleLoad);
     function handleLoad() {
         // Get the canvas and rendering context
@@ -125,6 +119,20 @@ var Doenerbude;
     });
     redo.addEventListener("click", function () {
         location.reload();
+    });
+    plus.addEventListener("click", function () {
+        let images = new Array("cucumber.png", "tomato.png", "meat.png", "onion.png", "salad.png");
+        let index = 0;
+        const zutat1 = document.getElementById("random_img");
+        index = Math.floor(Math.random() * images.length);
+        document.getElementById("random_img").src = images[index];
+        zutat1.classList.remove("is-hidden");
+        let images2 = new Array("salad.png", "cucumber.png", "tomato.png", "meat.png", "onion.png");
+        let index2 = 0;
+        const zutat2 = document.getElementById("random_img2");
+        index2 = Math.floor(Math.random() * images2.length);
+        document.getElementById("random_img2").src = images2[index2];
+        zutat2.classList.remove("is-hidden");
     });
 })(Doenerbude || (Doenerbude = {}));
 //# sourceMappingURL=main.js.map

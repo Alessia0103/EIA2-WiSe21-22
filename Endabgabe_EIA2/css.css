@@ -10,26 +10,58 @@ html{
     justify-content: center; 
 }
 #plus{
+    top:730px;
     width : 50px;
     height: 50px;
+    left: 1150px;
     position: absolute;
-    right:108px;
-    top: 720px;
-    opacity: 80%;
+    display: flex;
+    margin-bottom:0px;
+    opacity: 100%;
     cursor: pointer;
+    justify-content: center;
 
 }
 #redo{
+    top: 80px;
     width : 50px;
     height: 50px;
+    left: 100px;
     position: absolute;
-    right:1158px;
-    top: 80px;
+    display: flex;
+    margin-bottom:0px;
     opacity: 100%;
+    justify-content: center;
     background-color:#F2DDCC;
     opacity: 80%;
     cursor: pointer;
     
+}
+#random_img{
+    top:730px;
+    width : 50px;
+    height: 50px;
+    left: 1215px;
+    position: absolute;
+    display: flex;
+    margin-bottom:0px;
+    opacity: 100%;
+    justify-content: center;
+    opacity: 80%;
+    cursor: pointer;
+}
+#random_img2{
+    top:730px;
+    width : 50px;
+    height: 50px;
+    left: 1275px;
+    position: absolute;
+    display: flex;
+    margin-bottom:0px;
+    opacity: 100%;
+    justify-content: center;
+    opacity: 80%;
+    cursor: pointer;
 }
 #text-redo {
     position: absolute;
