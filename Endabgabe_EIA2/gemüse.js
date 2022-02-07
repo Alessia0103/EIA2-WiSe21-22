@@ -6,6 +6,7 @@ var Doenerbude;
     const aufflei = document.getElementById("buttonflei");
     const counterflei = document.getElementById("counterflei");
     var fleischges = 10;
+    var fleischkitchen = 10;
     var iconflei = false;
     var buttonflei = false;
     fleisch.addEventListener("click", function () {
@@ -18,6 +19,7 @@ var Doenerbude;
         }
         fleischges--;
         fleischElemente();
+        fleischele();
         buttonfleisch();
     });
     function fleischElemente() {
@@ -33,6 +35,7 @@ var Doenerbude;
     aufflei.addEventListener("click", function () {
         if (buttonflei == true) {
             fleischges = 10;
+            fleischkitchen = 0;
             aufflei.classList.add("is-hidden");
             counterflei.classList.remove("is-hidden");
             //for (let i: number = 0; i <= 3; i++);
@@ -41,13 +44,18 @@ var Doenerbude;
                 fleisch.classList.remove("is-hidden");
                 counterflei.classList.add("is-hidden");
                 fleischElemente();
+                fleischele();
             }, 5000);
         }
     });
+    function fleischele() {
+        document.querySelector(".fleischküche").innerHTML = "" + fleischkitchen;
+    }
     //Tomate
     const tomate = document.getElementById("tomate-theke");
     const aufTom = document.getElementById("buttontom");
     const counterTom = document.getElementById("countertom");
+    var tomatekitchen = 10;
     var tomateges = 10;
     var icontom = false;
     var buttontom = false;
@@ -76,6 +84,7 @@ var Doenerbude;
     aufTom.addEventListener("click", function () {
         if (buttontom == true) {
             tomateges = 10;
+            tomatekitchen = 0;
             aufTom.classList.add("is-hidden");
             counterTom.classList.remove("is-hidden");
             //for (let i: number = 0; i <= 3; i++);
@@ -84,14 +93,19 @@ var Doenerbude;
                 tomate.classList.remove("is-hidden");
                 counterTom.classList.add("is-hidden");
                 tomatenElemente();
+                tomatenele();
             }, 5000);
         }
     });
+    function tomatenele() {
+        document.querySelector(".tomateküche").innerHTML = "" + tomatekitchen;
+    }
     //Salat
     const salad = document.getElementById("salad-theke");
     const aufSalad = document.getElementById("buttonsal");
     const counter = document.getElementById("counter");
     var saladges = 10;
+    var saladkitchen = 10;
     var iconsalad = false;
     var buttonSalad = false;
     salad.addEventListener("click", function () {
@@ -119,6 +133,7 @@ var Doenerbude;
     aufSalad.addEventListener("click", function () {
         if (buttonSalad == true) {
             saladges = 10;
+            saladkitchen = 0;
             aufSalad.classList.add("is-hidden");
             counter.classList.remove("is-hidden");
             //for (let i: number = 0; i <= 3; i++);
@@ -127,14 +142,19 @@ var Doenerbude;
                 salad.classList.remove("is-hidden");
                 counter.classList.add("is-hidden");
                 ListederElemente();
+                ListederEle();
             }, 5000);
         }
     });
+    function ListederEle() {
+        document.querySelector(".saladküche").innerHTML = "" + saladkitchen;
+    }
     //Zwiebel
     const zwiebel = document.getElementById("zwiebel-theke");
     const aufZwieb = document.getElementById("buttonzwi");
     const counterZwi = document.getElementById("counterzwi");
     var zwiebelges = 10;
+    var zwiebelnkitchen = 10;
     var iconzwi = false;
     var buttonZwi = false;
     //Zwiebeln 
@@ -163,6 +183,7 @@ var Doenerbude;
     aufZwieb.addEventListener("click", function () {
         if (buttonZwi == true) {
             zwiebelges = 10;
+            zwiebelnkitchen = 0;
             aufZwieb.classList.add("is-hidden");
             counterZwi.classList.remove("is-hidden");
             //for (let i: number = 0; i <= 3; i++);
@@ -171,14 +192,19 @@ var Doenerbude;
                 zwiebel.classList.remove("is-hidden");
                 counterZwi.classList.add("is-hidden");
                 ZwiebelElemente();
+                ZwiebelEle();
             }, 5000);
         }
     });
+    function ZwiebelEle() {
+        document.querySelector(".zwiebelküche").innerHTML = "" + zwiebelnkitchen;
+    }
     //Gurke
     const gurke = document.getElementById("gurke-theke");
     const aufGur = document.getElementById("buttongur");
     const countergur = document.getElementById("countergur");
     var gurkeges = 10;
+    var gurkekitchen = 10;
     var icongur = false;
     var buttongur = false;
     //Gurke
@@ -207,6 +233,7 @@ var Doenerbude;
     aufGur.addEventListener("click", function () {
         if (buttongur == true) {
             gurkeges = 10;
+            gurkekitchen = 0;
             aufGur.classList.add("is-hidden");
             countergur.classList.remove("is-hidden");
             //for (let i: number = 0; i <= 3; i++);
@@ -215,8 +242,12 @@ var Doenerbude;
                 gurke.classList.remove("is-hidden");
                 countergur.classList.add("is-hidden");
                 GurkeElemente();
+                GurkeEle();
             }, 5000);
         }
     });
+    function GurkeEle() {
+        document.querySelector(".gurkeküche").innerHTML = "" + gurkekitchen;
+    }
 })(Doenerbude || (Doenerbude = {}));
 //# sourceMappingURL=gem%C3%BCse.js.map

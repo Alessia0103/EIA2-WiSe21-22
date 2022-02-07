@@ -1,8 +1,8 @@
 namespace Doenerbude { 
     
     export class Ali extends Moveable {
-            public team: string;
-            public startPosition: Vector;
+            
+           
             public destination: Vector; 
             public startMoving: boolean = false;
             public radius: number = 40;
@@ -35,25 +35,15 @@ public move(): void {
        
         if (this.startMoving == true) { 
 
-           
-            distance += (Math.random() - 0.1) * (0.01 * direction.length);
-
-            this.destination.x += distance;
-            this.destination.y += distance;
+            this.destination.x -= distance;
+            this.destination.y -= distance;
             this.startMoving = false;
         }
         direction.scale(1 / 50);
 
-        if (distance < 150) {
-            this.position.add(new Vector(direction.x * 2, direction.y * 2));
+        if (distance < 300) {
+            this.position.add(new Vector(direction.x * 6, direction.y * 6));
         } else {
             this.position.add(direction);
         }
-    }
-}
-public isClicked(_clickPosition: Vector): Boolean {
-
-    let difference: Vector = new Vector(_clickPosition.x - this.position.x, _clickPosition.y - this.position.y);
-    return (difference.length < this.radius);
-}
-    }}
+    }}}}

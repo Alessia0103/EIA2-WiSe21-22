@@ -6,6 +6,7 @@ namespace Doenerbude {
     const aufflei: Element = (document.getElementById("buttonflei")as HTMLInputElement);
     const counterflei: Element = (document.getElementById("counterflei")as HTMLInputElement);
     var fleischges: number = 10; 
+    var fleischkitchen: number = 10;
     var iconflei: boolean = false;
     var buttonflei: boolean = false;
     
@@ -19,6 +20,7 @@ namespace Doenerbude {
             }
             fleischges--;
             fleischElemente() ;
+            fleischele();
             buttonfleisch();
         });
 
@@ -35,6 +37,7 @@ namespace Doenerbude {
     aufflei.addEventListener("click", function (): void {
         if (buttonflei == true) {
             fleischges = 10;
+            fleischkitchen = 0;
             aufflei.classList.add("is-hidden");
             counterflei.classList.remove("is-hidden");
             //for (let i: number = 0; i <= 3; i++);
@@ -43,13 +46,18 @@ namespace Doenerbude {
                 fleisch.classList.remove("is-hidden");
                 counterflei.classList.add("is-hidden");
                 fleischElemente();
+                fleischele();
             },         5000);
         }
      }); 
+
+    function fleischele(): void {
+        (document.querySelector(".fleischküche")as HTMLInputElement).innerHTML = "" + fleischkitchen; }
  //Tomate
     const tomate: Element = (document.getElementById("tomate-theke")as HTMLInputElement); 
     const aufTom: Element = (document.getElementById("buttontom")as HTMLInputElement);
     const counterTom: Element = (document.getElementById("countertom")as HTMLInputElement);
+    var tomatekitchen: number = 10;
     var tomateges: number = 10; 
     var icontom: boolean = false;
     var buttontom: boolean = false;
@@ -80,6 +88,7 @@ namespace Doenerbude {
     aufTom.addEventListener("click", function (): void {
         if (buttontom == true) {
             tomateges = 10;
+            tomatekitchen = 0;
             aufTom.classList.add("is-hidden");
             counterTom.classList.remove("is-hidden");
             //for (let i: number = 0; i <= 3; i++);
@@ -88,14 +97,19 @@ namespace Doenerbude {
                 tomate.classList.remove("is-hidden");
                 counterTom.classList.add("is-hidden");
                 tomatenElemente();
+                tomatenele();
             },         5000);
         }
      }); 
+    function tomatenele(): void {
+        (document.querySelector(".tomateküche")as HTMLInputElement).innerHTML = "" + tomatekitchen; }
+     
 //Salat
     const salad: Element = (document.getElementById("salad-theke")as HTMLInputElement);
     const aufSalad: Element = (document.getElementById("buttonsal")as HTMLInputElement);
     const counter: Element = (document.getElementById("counter")as HTMLInputElement);
     var saladges: number = 10; 
+    var saladkitchen: number = 10;
     var iconsalad: boolean = false;
     var buttonSalad: boolean = false;
 
@@ -125,6 +139,7 @@ namespace Doenerbude {
     aufSalad.addEventListener("click", function (): void {
         if (buttonSalad == true) {
             saladges = 10;
+            saladkitchen = 0;
             aufSalad.classList.add("is-hidden");
             counter.classList.remove("is-hidden");
             //for (let i: number = 0; i <= 3; i++);
@@ -133,14 +148,19 @@ namespace Doenerbude {
                 salad.classList.remove("is-hidden");
                 counter.classList.add("is-hidden");
                 ListederElemente();
+                ListederEle();
             },         5000);
         }
-     }); 
+     });
+     
+    function ListederEle(): void {
+        (document.querySelector(".saladküche")as HTMLInputElement).innerHTML = "" + saladkitchen; }
 //Zwiebel
     const zwiebel: Element = (document.getElementById("zwiebel-theke")as HTMLInputElement); 
     const aufZwieb: Element = (document.getElementById("buttonzwi")as HTMLInputElement);
     const counterZwi: Element = (document.getElementById("counterzwi")as HTMLInputElement);
     var zwiebelges: number = 10; 
+    var zwiebelnkitchen: number = 10;
     var iconzwi: boolean = false;
     var buttonZwi: boolean = false;
      
@@ -171,6 +191,7 @@ namespace Doenerbude {
     aufZwieb.addEventListener("click", function (): void {
         if (buttonZwi == true) {
             zwiebelges = 10;
+            zwiebelnkitchen = 0;
             aufZwieb.classList.add("is-hidden");
             counterZwi.classList.remove("is-hidden");
             //for (let i: number = 0; i <= 3; i++);
@@ -179,14 +200,19 @@ namespace Doenerbude {
                 zwiebel.classList.remove("is-hidden");
                 counterZwi.classList.add("is-hidden");
                 ZwiebelElemente();
+                ZwiebelEle();
             },         5000);
         }
      }); 
+
+    function ZwiebelEle(): void {
+        (document.querySelector(".zwiebelküche")as HTMLInputElement).innerHTML = "" + zwiebelnkitchen; }
        //Gurke
     const gurke: Element = (document.getElementById("gurke-theke")as HTMLInputElement); 
     const aufGur: Element = (document.getElementById("buttongur")as HTMLInputElement);
     const countergur: Element = (document.getElementById("countergur")as HTMLInputElement);
     var gurkeges: number = 10; 
+    var gurkekitchen: number = 10;
     var icongur: boolean = false;
     var buttongur: boolean = false;
 
@@ -217,6 +243,7 @@ namespace Doenerbude {
     aufGur.addEventListener("click", function (): void {
         if (buttongur == true) {
             gurkeges = 10;
+            gurkekitchen = 0;
             aufGur.classList.add("is-hidden");
             countergur.classList.remove("is-hidden");
             //for (let i: number = 0; i <= 3; i++);
@@ -225,9 +252,12 @@ namespace Doenerbude {
                 gurke.classList.remove("is-hidden");
                 countergur.classList.add("is-hidden");
                 GurkeElemente();
+                GurkeEle();
             },         5000);
         }
      }); 
+    function GurkeEle(): void {
+        (document.querySelector(".gurkeküche")as HTMLInputElement).innerHTML = "" + gurkekitchen; }
 
     
 }

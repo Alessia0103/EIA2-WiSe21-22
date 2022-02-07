@@ -25,7 +25,7 @@ var Doenerbude;
         { x: 180, y: 100, team: "mitarbeiter" }
     ];
     let moveables = [];
-    let allPlayers = [];
+    //let allPlayers: Ali[] = [];
     window.addEventListener("load", handleLoad);
     function handleLoad() {
         // Get the canvas and rendering context
@@ -48,7 +48,9 @@ var Doenerbude;
         gemuese.classList.remove("is-hidden");
         getUserPreferences();
         Doenerbude.doenerladen = new Doenerbude.Laden();
-        createpeople();
+        //createpeople();
+        Doenerbude.dali = new Doenerbude.Ali(new Doenerbude.Vector(300, 300), teamAColor);
+        moveables.push(Doenerbude.dali);
         window.setInterval(drawUpdate, 20);
         window.setInterval(function () {
             //if (animation == true) 
@@ -141,13 +143,10 @@ var Doenerbude;
         teamAColor = formData.get("memberColorPicker");
         //teamBColor = <string>formData.get("TeamBColorPicker"); 
     }
-    function createpeople() {
-        for (let i = 0; i < 3; i++) {
-            Doenerbude.dali = new Doenerbude.Ali(new Doenerbude.Vector(300, 300), teamAColor);
-            moveables.push(Doenerbude.dali);
-            allPlayers.push(Doenerbude.dali);
-        }
-    }
+    //function createpeople(): void {
+    // for (let i: number = 0; i < 3; i++) {
+    //allPlayers.push(dali);
+    //}}
     function handleCanvasClick(_event) {
         mitarbeiters(_event);
     }

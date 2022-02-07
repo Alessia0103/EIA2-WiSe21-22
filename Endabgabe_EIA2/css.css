@@ -149,6 +149,17 @@ html{
     font-family: Arial, Helvetica, sans-serif;
     color: white;
 }
+.saladküche{
+    top:160px;
+    width: 25px;
+    left: 220px;
+    position: absolute;
+    display: flex;
+    font-size: 20px;
+    background-color: #73645F;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
 .is-hidden {
     display:none !important;
 } 
@@ -191,6 +202,17 @@ html{
     top:280px;
     width: 25px;
     left: 730px;
+    position: absolute;
+    display: flex;
+    font-size: 20px;
+    background-color: #73645F;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+.zwiebelküche{
+    top:280px;
+    width: 25px;
+    left: 220px;
     position: absolute;
     display: flex;
     font-size: 20px;
@@ -253,6 +275,17 @@ html{
     font-family: Arial, Helvetica, sans-serif;
     color: white;
 }
+.gurkeküche{
+    top:405px;
+    width: 25px;
+    left: 220px;
+    position: absolute;
+    display: flex;
+    font-size: 20px;
+    background-color: #73645F;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
 #gurke-küche{
     top:405px;
     width: 80px;
@@ -308,6 +341,17 @@ html{
     font-family: Arial, Helvetica, sans-serif;
     color: white;
 }
+.tomateküche{
+    top:520px;
+    width: 25px;
+    left: 220px;
+    position: absolute;
+    display: flex;
+    font-size: 20px;
+    background-color: #73645F;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
 #tomate-küche{
     top:520px;
     width: 80px;
@@ -356,6 +400,17 @@ html{
     top:160px;
     width: 25px;
     left: 605px;
+    position: absolute;
+    display: flex;
+    font-size: 20px;
+    background-color: #73645F;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+.fleischküche{
+    top:640px;
+    width: 25px;
+    left: 220px;
     position: absolute;
     display: flex;
     font-size: 20px;

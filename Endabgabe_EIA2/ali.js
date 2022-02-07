@@ -22,23 +22,18 @@ var Doenerbude;
                 let direction = new Doenerbude.Vector(this.destination.x - this.position.x, this.destination.y - this.position.y);
                 let distance = 0;
                 if (this.startMoving == true) {
-                    distance += (Math.random() - 0.1) * (0.01 * direction.length);
-                    this.destination.x += distance;
-                    this.destination.y += distance;
+                    this.destination.x -= distance;
+                    this.destination.y -= distance;
                     this.startMoving = false;
                 }
                 direction.scale(1 / 50);
-                if (distance < 150) {
-                    this.position.add(new Doenerbude.Vector(direction.x * 2, direction.y * 2));
+                if (distance < 300) {
+                    this.position.add(new Doenerbude.Vector(direction.x * 6, direction.y * 6));
                 }
                 else {
                     this.position.add(direction);
                 }
             }
-        }
-        isClicked(_clickPosition) {
-            let difference = new Doenerbude.Vector(_clickPosition.x - this.position.x, _clickPosition.y - this.position.y);
-            return (difference.length < this.radius);
         }
     }
     Doenerbude.Ali = Ali;

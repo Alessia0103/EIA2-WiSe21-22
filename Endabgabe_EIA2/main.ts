@@ -26,8 +26,8 @@ namespace  Doenerbude {
     //let listenToMouseMove: boolean = false; // For switching the player
 
     export interface PlayerInformation {
-        x: Number;
-        y: Number;
+        x: number;
+        y: number;
         team: string;
     }
     export let playerInformation: PlayerInformation[] = [
@@ -37,7 +37,7 @@ namespace  Doenerbude {
     ];
 
     let moveables: Moveable[] = [];
-    let allPlayers: Ali[] = [];
+    //let allPlayers: Ali[] = [];
     
     
 
@@ -77,7 +77,10 @@ namespace  Doenerbude {
 
         doenerladen = new Laden();
         
-        createpeople();
+        //createpeople();
+
+        dali = new Ali(new Vector(300, 300), teamAColor);
+        moveables.push(dali); 
 
         window.setInterval(drawUpdate, 20);
 
@@ -208,15 +211,11 @@ namespace  Doenerbude {
         //teamBColor = <string>formData.get("TeamBColorPicker"); 
     }
 
-    function createpeople(): void {
-        for (let i: number = 0; i < 3; i++) {
+    //function createpeople(): void {
+       // for (let i: number = 0; i < 3; i++) {
+            //allPlayers.push(dali);
 
-            dali  = new Ali(new Vector(300, 300), teamAColor);
-            
-            moveables.push(dali); 
-            allPlayers.push(dali);
-
-    }}
+   //}}
     function handleCanvasClick(_event: MouseEvent): void {
             mitarbeiters(_event);
              }
