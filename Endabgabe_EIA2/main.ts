@@ -1,7 +1,8 @@
 namespace  Doenerbude {
     export let crc2: CanvasRenderingContext2D;
-    export let dali: Ali | null;
+    export let dali: Ali;
     export let doenerladen: Laden;
+    //export let animation: boolean = false;
 
     let landingPage: HTMLDivElement;
     let startbutton: HTMLDivElement;
@@ -16,8 +17,8 @@ namespace  Doenerbude {
     const doneButtonZwi: Element = (document.getElementById("buttonzwi")as HTMLInputElement);
     const plus: Element = (document.getElementById("plus")as HTMLInputElement);
     const text: Element = (document.getElementById("text-redo")as HTMLInputElement);
-    //let images: string[] = ["salad.png", "onion.png", "cucumber.png", "tomato.png", "meat.png" ];
-    //let image: number[] = [Math.floor(Math.random() *  images.length)];
+    let teamAColor: string = "66b2ff";
+    //let teamBColor: string = "ff3333";
     let buttonClick: number = 2;
     let buttonDone: Boolean = false;
     //let pushed: Boolean = false;
@@ -25,18 +26,18 @@ namespace  Doenerbude {
     //let listenToMouseMove: boolean = false; // For switching the player
 
     export interface PlayerInformation {
-        x: number;
-        y: number;
+        x: Number;
+        y: Number;
         team: string;
     }
     export let playerInformation: PlayerInformation[] = [
     //Mitarbeiter
-    { x: 135, y: 275, team: "Ali 1" },
-    { x: 180, y: 100, team: "Ali 2" }
+    { x: 135, y: 275, team: "mitarbeiter" },
+    { x: 180, y: 100, team: "mitarbeiter" }
     ];
 
     let moveables: Moveable[] = [];
-    //let allPlayers: Ali[] = [];
+    let allPlayers: Ali[] = [];
     
     
 
@@ -56,7 +57,8 @@ namespace  Doenerbude {
             startbutton.addEventListener("click", startSimulation);
 
              // Install event-listeners on canvas to be able to shoot the ball, switch players or see their details
-            //canvas.addEventListener("mousedown", handleCanvasClick); 
+            canvas.addEventListener("click", handleCanvasClick); 
+            
             //canvas.addEventListener("mousemove", dragPlayer);
             //canvas.addEventListener("mouseup", switchPlayer);
     }
@@ -70,22 +72,26 @@ namespace  Doenerbude {
         canvas.classList.remove("is-hidden");
         
         gemuese.classList.remove("is-hidden");
+
+        getUserPreferences();
+
         doenerladen = new Laden();
         
-        
-        createPeopleonField();
+        createpeople();
+
         window.setInterval(drawUpdate, 20);
+
+        window.setInterval(function (): void {
+            //if (animation == true) 
+               animationUpdate();
+        },                 20);
 }
-    function createPeopleonField(): void {
-    const mitarbeiter: Ali = new Ali(new Vector(300, 300));
-    moveables.push(mitarbeiter);
-}
+  
     function drawUpdate(): void {
 
     doenerladen.draw();
 
     for (let moveable of moveables) {
-
         moveable.draw(); 
     
     }
@@ -93,8 +99,9 @@ namespace  Doenerbude {
 }
 
     doneButtonSal.addEventListener("click", function (): void {
+       
 
-    if (buttonClick == 1) {
+        if (buttonClick == 1) {
         buttonDone = true;
         gemuese.classList.add("is-hidden");
         canvas.classList.add("is-hidden");
@@ -104,7 +111,7 @@ namespace  Doenerbude {
         window.alert("Die Simulation ist leider vorbei, bitte Lade die Seite neu um zur Startseite zu gelangen!");
 
     }
-    buttonClick--;
+        buttonClick--;
     });
 
     doneButtonFlei.addEventListener("click", function (): void {
@@ -191,9 +198,55 @@ namespace  Doenerbude {
     zutat2.classList.remove("is-hidden");
    
 
-
     
      });
+
+    function getUserPreferences(): void {
+
+        let formData: FormData = new FormData(document.forms[0]); 
+        teamAColor = <string>formData.get("memberColorPicker"); 
+        //teamBColor = <string>formData.get("TeamBColorPicker"); 
+    }
+
+    function createpeople(): void {
+        for (let i: number = 0; i < 3; i++) {
+
+            dali  = new Ali(new Vector(300, 300), teamAColor);
+            
+            moveables.push(dali); 
+            allPlayers.push(dali);
+
+    }}
+    function handleCanvasClick(_event: MouseEvent): void {
+            mitarbeiters(_event);
+             }
+    
+
+    function mitarbeiters(_event: MouseEvent): void {
+        let xpos: number = 0;
+        let ypos: number = 0;
+
+        if (_event.offsetX > 180 && _event.offsetX < 1030) {
+            xpos = _event.offsetX;
+        }
+        if (_event.offsetY > 0 && _event.offsetY < 700) {
+            ypos = _event.offsetY;
+        }
+
+        if (xpos > 0 && ypos > 0) {
+            dali.destination = new Vector(xpos, ypos);
+            dali.startMoving = true;
+            //animation = true;
+            console.log("HI");
+        }
+
+    }
+
+    function animationUpdate(): void { 
+        for ( let moveable of moveables) {
+            moveable.move();
+        }
+    }
     
 
     

@@ -1,6 +1,7 @@
 "use strict";
 var Doenerbude;
 (function (Doenerbude) {
+    //export let animation: boolean = false;
     let landingPage;
     let startbutton;
     const neu = document.getElementById("redo");
@@ -14,17 +15,17 @@ var Doenerbude;
     const doneButtonZwi = document.getElementById("buttonzwi");
     const plus = document.getElementById("plus");
     const text = document.getElementById("text-redo");
-    //let images: string[] = ["salad.png", "onion.png", "cucumber.png", "tomato.png", "meat.png" ];
-    //let image: number[] = [Math.floor(Math.random() *  images.length)];
+    let teamAColor = "66b2ff";
+    //let teamBColor: string = "ff3333";
     let buttonClick = 2;
     let buttonDone = false;
     Doenerbude.playerInformation = [
         //Mitarbeiter
-        { x: 135, y: 275, team: "Ali 1" },
-        { x: 180, y: 100, team: "Ali 2" }
+        { x: 135, y: 275, team: "mitarbeiter" },
+        { x: 180, y: 100, team: "mitarbeiter" }
     ];
     let moveables = [];
-    //let allPlayers: Ali[] = [];
+    let allPlayers = [];
     window.addEventListener("load", handleLoad);
     function handleLoad() {
         // Get the canvas and rendering context
@@ -36,7 +37,7 @@ var Doenerbude;
         startbutton = document.getElementById("startbutton");
         startbutton.addEventListener("click", startSimulation);
         // Install event-listeners on canvas to be able to shoot the ball, switch players or see their details
-        //canvas.addEventListener("mousedown", handleCanvasClick); 
+        canvas.addEventListener("click", handleCanvasClick);
         //canvas.addEventListener("mousemove", dragPlayer);
         //canvas.addEventListener("mouseup", switchPlayer);
     }
@@ -45,13 +46,14 @@ var Doenerbude;
         landingPage.style.display = "none";
         canvas.classList.remove("is-hidden");
         gemuese.classList.remove("is-hidden");
+        getUserPreferences();
         Doenerbude.doenerladen = new Doenerbude.Laden();
-        createPeopleonField();
+        createpeople();
         window.setInterval(drawUpdate, 20);
-    }
-    function createPeopleonField() {
-        const mitarbeiter = new Doenerbude.Ali(new Doenerbude.Vector(300, 300));
-        moveables.push(mitarbeiter);
+        window.setInterval(function () {
+            //if (animation == true) 
+            animationUpdate();
+        }, 20);
     }
     function drawUpdate() {
         Doenerbude.doenerladen.draw();
@@ -134,5 +136,41 @@ var Doenerbude;
         document.getElementById("random_img2").src = images2[index2];
         zutat2.classList.remove("is-hidden");
     });
+    function getUserPreferences() {
+        let formData = new FormData(document.forms[0]);
+        teamAColor = formData.get("memberColorPicker");
+        //teamBColor = <string>formData.get("TeamBColorPicker"); 
+    }
+    function createpeople() {
+        for (let i = 0; i < 3; i++) {
+            Doenerbude.dali = new Doenerbude.Ali(new Doenerbude.Vector(300, 300), teamAColor);
+            moveables.push(Doenerbude.dali);
+            allPlayers.push(Doenerbude.dali);
+        }
+    }
+    function handleCanvasClick(_event) {
+        mitarbeiters(_event);
+    }
+    function mitarbeiters(_event) {
+        let xpos = 0;
+        let ypos = 0;
+        if (_event.offsetX > 180 && _event.offsetX < 1030) {
+            xpos = _event.offsetX;
+        }
+        if (_event.offsetY > 0 && _event.offsetY < 700) {
+            ypos = _event.offsetY;
+        }
+        if (xpos > 0 && ypos > 0) {
+            Doenerbude.dali.destination = new Doenerbude.Vector(xpos, ypos);
+            Doenerbude.dali.startMoving = true;
+            //animation = true;
+            console.log("HI");
+        }
+    }
+    function animationUpdate() {
+        for (let moveable of moveables) {
+            moveable.move();
+        }
+    }
 })(Doenerbude || (Doenerbude = {}));
 //# sourceMappingURL=main.js.map
