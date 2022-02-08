@@ -5,6 +5,7 @@ namespace Doenerbude {
     const fleisch: Element = (document.getElementById("fleisch-theke")as HTMLInputElement); 
     const aufflei: Element = (document.getElementById("buttonflei")as HTMLInputElement);
     const counterflei: Element = (document.getElementById("counterflei")as HTMLInputElement);
+    var fleischzahl: number = 0;
     var fleischges: number = 10; 
     var fleischkitchen: number = 10;
     var iconflei: boolean = false;
@@ -18,14 +19,18 @@ namespace Doenerbude {
                 aufflei.classList.remove("is-hidden");
                 window.alert("Bitte Fleisch Auffüllen!");
             }
+            fleischzahl++;
             fleischges--;
             fleischElemente() ;
             fleischele();
             buttonfleisch();
+            fleischzah();
         });
 
     function fleischElemente(): void {
         (document.querySelector(".fleisch")as HTMLInputElement).innerHTML = "" + fleischges; }
+    function fleischzah(): void {
+            (document.querySelector(".fleischzahl")as HTMLInputElement).innerHTML = "Anzahl Fleisch verkauft: " + fleischzahl; }
             //document.getElementById("salad").innerHTML = "Tasks for today: " + saladges; }
 
     function buttonfleisch(): void {
@@ -57,6 +62,7 @@ namespace Doenerbude {
     const tomate: Element = (document.getElementById("tomate-theke")as HTMLInputElement); 
     const aufTom: Element = (document.getElementById("buttontom")as HTMLInputElement);
     const counterTom: Element = (document.getElementById("countertom")as HTMLInputElement);
+    var tomatezahl: number = 0;
     var tomatekitchen: number = 10;
     var tomateges: number = 10; 
     var icontom: boolean = false;
@@ -70,13 +76,17 @@ namespace Doenerbude {
                 aufTom.classList.remove("is-hidden");
                 window.alert("Bitte Tomaten Auffüllen!");
             }
+            tomatezahl++;
             tomateges--;
+            tomatenZah();
             tomatenElemente() ;
             buttontomaten();
         });
 
     function tomatenElemente(): void {
         (document.querySelector(".tomate")as HTMLInputElement).innerHTML = "" + tomateges; }
+    function tomatenZah(): void {
+        (document.querySelector(".tomatezahl")as HTMLInputElement).innerHTML = "Anzahl Tomaten verkauft: " + tomatezahl; }
             //document.getElementById("salad").innerHTML = "Tasks for today: " + saladges; }
 
     function buttontomaten(): void {
@@ -101,6 +111,7 @@ namespace Doenerbude {
             },         5000);
         }
      }); 
+
     function tomatenele(): void {
         (document.querySelector(".tomateküche")as HTMLInputElement).innerHTML = "" + tomatekitchen; }
      
@@ -108,6 +119,7 @@ namespace Doenerbude {
     const salad: Element = (document.getElementById("salad-theke")as HTMLInputElement);
     const aufSalad: Element = (document.getElementById("buttonsal")as HTMLInputElement);
     const counter: Element = (document.getElementById("counter")as HTMLInputElement);
+    var saladzahl: number = 0;
     var saladges: number = 10; 
     var saladkitchen: number = 10;
     var iconsalad: boolean = false;
@@ -121,13 +133,17 @@ namespace Doenerbude {
                 aufSalad.classList.remove("is-hidden");
                 window.alert("Bitte Salat Auffüllen!");
             }
+            saladzahl++;
             saladges--;
+            saladzah();
             ListederElemente() ;
             buttonsalat();
         });
 
     function ListederElemente(): void {
         (document.querySelector(".salad")as HTMLInputElement).innerHTML = "" + saladges; }
+    function saladzah(): void {
+            (document.querySelector(".saladzahl")as HTMLInputElement).innerHTML = "Anzahl Salat verkauft: " + saladzahl; }
             //document.getElementById("salad").innerHTML = "Tasks for today: " + saladges; }
 
     function buttonsalat(): void {
@@ -159,6 +175,7 @@ namespace Doenerbude {
     const zwiebel: Element = (document.getElementById("zwiebel-theke")as HTMLInputElement); 
     const aufZwieb: Element = (document.getElementById("buttonzwi")as HTMLInputElement);
     const counterZwi: Element = (document.getElementById("counterzwi")as HTMLInputElement);
+    var zwiebelzahl: number = 0;
     var zwiebelges: number = 10; 
     var zwiebelnkitchen: number = 10;
     var iconzwi: boolean = false;
@@ -173,13 +190,17 @@ namespace Doenerbude {
                 aufZwieb.classList.remove("is-hidden");
                 window.alert("Bitte Zwiebel Auffüllen!");
             }
+            zwiebelzahl++;
             zwiebelges--;
+            ZwiebelZah();
             ZwiebelElemente() ;
             buttonZwiebel();
         });
 
     function ZwiebelElemente(): void {
         (document.querySelector(".zwiebel")as HTMLInputElement).innerHTML = "" + zwiebelges; }
+    function ZwiebelZah(): void {
+            (document.querySelector(".zwiebelzahl")as HTMLInputElement).innerHTML = "Anzahl Zwiebel verkauft: " + zwiebelzahl; }
             //document.getElementById("salad").innerHTML = "Tasks for today: " + saladges; }
 
     function buttonZwiebel(): void {
@@ -211,6 +232,7 @@ namespace Doenerbude {
     const gurke: Element = (document.getElementById("gurke-theke")as HTMLInputElement); 
     const aufGur: Element = (document.getElementById("buttongur")as HTMLInputElement);
     const countergur: Element = (document.getElementById("countergur")as HTMLInputElement);
+    var gurkezahl: number = 0;
     var gurkeges: number = 10; 
     var gurkekitchen: number = 10;
     var icongur: boolean = false;
@@ -225,13 +247,17 @@ namespace Doenerbude {
                 aufGur.classList.remove("is-hidden");
                 window.alert("Bitte Gurken Auffüllen!");
             }
+            gurkezahl++;
             gurkeges--;
+            GurkeZah();
             GurkeElemente();
             buttonGuerke();
         });
 
     function GurkeElemente(): void {
         (document.querySelector(".gurke")as HTMLInputElement).innerHTML = "" + gurkeges; }
+    function GurkeZah(): void {
+            (document.querySelector(".gurkezahl")as HTMLInputElement).innerHTML = "Anzahl Gurken verkauft: " + gurkezahl; }
             //document.getElementById("salad").innerHTML = "Tasks for today: " + saladges; }
 
     function buttonGuerke(): void {

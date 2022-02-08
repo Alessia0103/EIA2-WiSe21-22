@@ -19,8 +19,17 @@ namespace  Doenerbude {
     const text: Element = (document.getElementById("text-redo")as HTMLInputElement);
     let teamAColor: string = "66b2ff";
     //let teamBColor: string = "ff3333";
-    let buttonClick: number = 2;
-    let buttonDone: Boolean = false;
+    let buttonClickSal: number = 2;
+   
+    let buttonClickOn: number = 2;
+  
+    let buttonClickFlei: number = 2;
+   
+    let buttonClickTom: number = 2;
+    
+    let buttonClickGur: number = 2;
+   
+    
     //let pushed: Boolean = false;
     //let draggedPlayer: Ali | undefined;
     //let listenToMouseMove: boolean = false; // For switching the player
@@ -104,76 +113,76 @@ namespace  Doenerbude {
     doneButtonSal.addEventListener("click", function (): void {
        
 
-        if (buttonClick == 1) {
-        buttonDone = true;
+        if (buttonClickSal == 1) {
+      
         gemuese.classList.add("is-hidden");
         canvas.classList.add("is-hidden");
         text.classList.remove("is-hidden");
         redo.classList.remove("is-hidden");
         
-        window.alert("Die Simulation ist leider vorbei, bitte Lade die Seite neu um zur Startseite zu gelangen!");
+        window.alert("Ups dein Salat ist leer, bitte Lade die Seite neu um zur Startseite zu gelangen!");
 
     }
-        buttonClick--;
+        buttonClickSal--;
     });
 
     doneButtonFlei.addEventListener("click", function (): void {
 
-    if (buttonClick == 1) {
-        buttonDone = true;
+    if (buttonClickFlei == 1) {
+        
         gemuese.classList.add("is-hidden");
         canvas.classList.add("is-hidden");
         text.classList.remove("is-hidden");
         redo.classList.remove("is-hidden");
         
-        window.alert("Die Simulation ist leider vorbei, bitte Lade die Seite neu um zur Startseite zu gelangen!");
+        window.alert("Ups dein Fleisch ist leer bitte Lade die Seite neu um zur Startseite zu gelangen!");
 
     }
-    buttonClick--;
+    buttonClickFlei--;
     });
 
     doneButtonTom.addEventListener("click", function (): void {
 
-        if (buttonClick == 1) {
-            buttonDone = true;
+        if (buttonClickTom == 1) {
+            
             gemuese.classList.add("is-hidden");
             canvas.classList.add("is-hidden");
             text.classList.remove("is-hidden");
             redo.classList.remove("is-hidden");
             
-            window.alert("Die Simulation ist leider vorbei, bitte Lade die Seite neu um zur Startseite zu gelangen!");
+            window.alert("Ups deine Tomaten sind leer, bitte Lade die Seite neu um zur Startseite zu gelangen!");
     
         }
-        buttonClick--;
+        buttonClickTom--;
         });
 
     doneButtonGur.addEventListener("click", function (): void {
 
-            if (buttonClick == 1) {
-                buttonDone = true;
+            if (buttonClickGur == 1) {
+                
                 gemuese.classList.add("is-hidden");
                 canvas.classList.add("is-hidden");
                 text.classList.remove("is-hidden");
                 redo.classList.remove("is-hidden");
                 
-                window.alert("Die Simulation ist leider vorbei, bitte Lade die Seite neu um zur Startseite zu gelangen!");
+                window.alert("Ups deine Gurken sind leer, bitte Lade die Seite neu um zur Startseite zu gelangen!");
         
             }
-            buttonClick--;
+            buttonClickGur--;
             });
     doneButtonZwi.addEventListener("click", function (): void {
 
-            if (buttonClick == 1) {
-                buttonDone = true;
+            if (buttonClickOn == 1) {
+                
                 gemuese.classList.add("is-hidden");
                 canvas.classList.add("is-hidden");
                 text.classList.remove("is-hidden");
                 redo.classList.remove("is-hidden");
                     
-                window.alert("Die Simulation ist leider vorbei, bitte Lade die Seite neu um zur Startseite zu gelangen!");
+                window.alert("Ups deine Zwiebeln sind leer, bitte Lade die Seite neu um zur Startseite zu gelangen!");
             
             }
-            buttonClick--;
+            buttonClickOn--;
             });
 
     neu.addEventListener("click", function (): void {
@@ -184,7 +193,7 @@ namespace  Doenerbude {
 });
 
     plus.addEventListener("click", function(): void {
-    let images: string [] =  new Array("cucumber.png", "tomato.png", "meat.png", "onion.png", "salad.png");
+    let images: string [] =  new Array("Emojis/cucumber-apple.png", "Emojis/tomato-apple.png", "Emojis/cut-of-meat-apple.png", "Emojis/onion-apple.png", "Emojis/green-salad-apple.png");
     let index: number = 0;
     const zutat1: Element = (document.getElementById("random_img")as HTMLInputElement);
     
@@ -192,14 +201,21 @@ namespace  Doenerbude {
     (document.getElementById("random_img")as HTMLInputElement).src = images[index];
     zutat1.classList.remove("is-hidden");
 
-    let images2: string [] =  new Array("salad.png", "cucumber.png", "tomato.png", "meat.png", "onion.png");
+    let images2: string [] =  new Array("Emojis/cucumber-apple.png", "Emojis/tomato-apple.png", "Emojis/cut-of-meat-apple.png", "Emojis/onion-apple.png", "Emojis/green-salad-apple.png");
     let index2: number = 0;
     const zutat2: Element = (document.getElementById("random_img2")as HTMLInputElement);
     
     index2 = Math.floor(Math.random() * images2.length);
     (document.getElementById("random_img2")as HTMLInputElement).src = images2[index2];
     zutat2.classList.remove("is-hidden");
-   
+    
+    let images3: string [] =  new Array("Emojis/stuffed-flatbread-apple.png", "Emojis/burrito-apple.png", "Emojis/taco-apple.png" );
+    let index3: number = 0;
+    const zutat3: Element = (document.getElementById("random_img3")as HTMLInputElement);
+    
+    index3 = Math.floor(Math.random() * images3.length);
+    (document.getElementById("random_img3")as HTMLInputElement).src = images3[index3];
+    zutat3.classList.remove("is-hidden");
 
     
      });
@@ -228,7 +244,7 @@ namespace  Doenerbude {
         if (_event.offsetX > 180 && _event.offsetX < 1030) {
             xpos = _event.offsetX;
         }
-        if (_event.offsetY > 0 && _event.offsetY < 700) {
+        if (_event.offsetY > 90 && _event.offsetY < 700) {
             ypos = _event.offsetY;
         }
 

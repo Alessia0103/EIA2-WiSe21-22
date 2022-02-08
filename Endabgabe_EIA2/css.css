@@ -63,6 +63,19 @@ html{
     opacity: 80%;
     cursor: pointer;
 }
+#random_img3{
+    top:730px;
+    width : 50px;
+    height: 50px;
+    left: 1335px;
+    position: absolute;
+    display: flex;
+    margin-bottom:0px;
+    opacity: 100%;
+    justify-content: center;
+    opacity: 80%;
+    cursor: pointer;
+}
 #text-redo {
     position: absolute;
     text-align: center;
@@ -90,6 +103,99 @@ html{
     width : 100px;
     height: 100px;
 
+}
+.menüleiste{
+    position: absolute;
+    margin-left: auto;
+	margin-right: auto;
+    text-align: center;
+    align-items: center;
+    display: flex;
+
+}
+.Info{
+    top:280px;
+    font-size: 15px;
+    left: 1150px;
+    position: absolute;
+    display: flex;
+    margin-bottom:0px;
+    font-family:Arial, Helvetica, sans-serif;
+    color: #262523;
+    font-weight: bold;
+    cursor: pointer;
+    justify-content: center;
+}
+.fleischzahl{
+    position: absolute;
+    text-align: left;
+    display: flex;
+    top: 310px;
+    font-size: 15;
+    opacity: 100%;
+    left: 1150px;
+    margin-left: auto;
+	margin-right: auto;
+	max-width: -webkit-max-content;  /* für Safari */	
+	max-width: -moz-max-content; 
+    color: #262523;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.tomatezahl{
+    position: absolute;
+    text-align: left;
+    top: 340px;
+    font-size: 15;
+    opacity: 100%;
+    left: 1150px;
+    margin-left: auto;
+	margin-right: auto;
+	max-width: -webkit-max-content;  /* für Safari */	
+	max-width: -moz-max-content; 
+    color: #262523;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.saladzahl{
+    position: absolute;
+    text-align: left;
+    top: 370px;
+    font-size: 15;
+    opacity: 100%;
+    left: 1150px;
+    margin-left: auto;
+	margin-right: auto;
+	max-width: -webkit-max-content;  /* für Safari */	
+	max-width: -moz-max-content; 
+    color: #262523;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.zwiebelzahl{
+    position: absolute;
+    text-align: left;
+    top: 400px;
+    font-size: 15;
+    opacity: 100%;
+    left: 1150px;
+    margin-left: auto;
+	margin-right: auto;
+	max-width: -webkit-max-content;  /* für Safari */	
+	max-width: -moz-max-content; 
+    color: #262523;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.gurkezahl{
+    position: absolute;
+    text-align: left;
+    top: 430px;
+    font-size: 15;
+    opacity: 100%;
+    left: 1150px;
+    margin-left: auto;
+	margin-right: auto;
+	max-width: -webkit-max-content;  /* für Safari */	
+	max-width: -moz-max-content; 
+    color: #262523;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .settingscontainer{
     top:100px;
@@ -186,6 +292,48 @@ html{
     justify-content: center;
 }
 
+.menu{
+    top:150px;
+    font-size: 15px;
+    left: 1150px;
+    position: absolute;
+    display: flex;
+    margin-bottom:0px;
+    opacity: 100%;
+    justify-content: center;
+    color: #262523;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#doener{
+    top:180px;
+    width: 60px;
+    left: 1140px;
+    position: absolute;
+    display:flex ;
+    margin-bottom:0px;
+    opacity: 100%;
+    justify-content: center;
+}
+#yufka{
+    top:180px;
+    width: 60px;
+    left: 1235px;
+    position: absolute;
+    display:flex ;
+    margin-bottom:0px;
+    opacity: 100%;
+    justify-content: center;
+}
+#taco{
+    top:180px;
+    width: 60px;
+    left: 1330px;
+    position: absolute;
+    display:flex ;
+    margin-bottom:0px;
+    opacity: 100%;
+    justify-content: center;
+}
 #counter{
     top:160px;
     width: 80px;

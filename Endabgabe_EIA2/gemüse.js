@@ -5,6 +5,7 @@ var Doenerbude;
     const fleisch = document.getElementById("fleisch-theke");
     const aufflei = document.getElementById("buttonflei");
     const counterflei = document.getElementById("counterflei");
+    var fleischzahl = 0;
     var fleischges = 10;
     var fleischkitchen = 10;
     var iconflei = false;
@@ -17,13 +18,18 @@ var Doenerbude;
             aufflei.classList.remove("is-hidden");
             window.alert("Bitte Fleisch Auffüllen!");
         }
+        fleischzahl++;
         fleischges--;
         fleischElemente();
         fleischele();
         buttonfleisch();
+        fleischzah();
     });
     function fleischElemente() {
         document.querySelector(".fleisch").innerHTML = "" + fleischges;
+    }
+    function fleischzah() {
+        document.querySelector(".fleischzahl").innerHTML = "Anzahl Fleisch verkauft: " + fleischzahl;
     }
     //document.getElementById("salad").innerHTML = "Tasks for today: " + saladges; }
     function buttonfleisch() {
@@ -55,6 +61,7 @@ var Doenerbude;
     const tomate = document.getElementById("tomate-theke");
     const aufTom = document.getElementById("buttontom");
     const counterTom = document.getElementById("countertom");
+    var tomatezahl = 0;
     var tomatekitchen = 10;
     var tomateges = 10;
     var icontom = false;
@@ -67,12 +74,17 @@ var Doenerbude;
             aufTom.classList.remove("is-hidden");
             window.alert("Bitte Tomaten Auffüllen!");
         }
+        tomatezahl++;
         tomateges--;
+        tomatenZah();
         tomatenElemente();
         buttontomaten();
     });
     function tomatenElemente() {
         document.querySelector(".tomate").innerHTML = "" + tomateges;
+    }
+    function tomatenZah() {
+        document.querySelector(".tomatezahl").innerHTML = "Anzahl Tomaten verkauft: " + tomatezahl;
     }
     //document.getElementById("salad").innerHTML = "Tasks for today: " + saladges; }
     function buttontomaten() {
@@ -104,6 +116,7 @@ var Doenerbude;
     const salad = document.getElementById("salad-theke");
     const aufSalad = document.getElementById("buttonsal");
     const counter = document.getElementById("counter");
+    var saladzahl = 0;
     var saladges = 10;
     var saladkitchen = 10;
     var iconsalad = false;
@@ -116,12 +129,17 @@ var Doenerbude;
             aufSalad.classList.remove("is-hidden");
             window.alert("Bitte Salat Auffüllen!");
         }
+        saladzahl++;
         saladges--;
+        saladzah();
         ListederElemente();
         buttonsalat();
     });
     function ListederElemente() {
         document.querySelector(".salad").innerHTML = "" + saladges;
+    }
+    function saladzah() {
+        document.querySelector(".saladzahl").innerHTML = "Anzahl Salat verkauft: " + saladzahl;
     }
     //document.getElementById("salad").innerHTML = "Tasks for today: " + saladges; }
     function buttonsalat() {
@@ -153,6 +171,7 @@ var Doenerbude;
     const zwiebel = document.getElementById("zwiebel-theke");
     const aufZwieb = document.getElementById("buttonzwi");
     const counterZwi = document.getElementById("counterzwi");
+    var zwiebelzahl = 0;
     var zwiebelges = 10;
     var zwiebelnkitchen = 10;
     var iconzwi = false;
@@ -166,12 +185,17 @@ var Doenerbude;
             aufZwieb.classList.remove("is-hidden");
             window.alert("Bitte Zwiebel Auffüllen!");
         }
+        zwiebelzahl++;
         zwiebelges--;
+        ZwiebelZah();
         ZwiebelElemente();
         buttonZwiebel();
     });
     function ZwiebelElemente() {
         document.querySelector(".zwiebel").innerHTML = "" + zwiebelges;
+    }
+    function ZwiebelZah() {
+        document.querySelector(".zwiebelzahl").innerHTML = "Anzahl Zwiebel verkauft: " + zwiebelzahl;
     }
     //document.getElementById("salad").innerHTML = "Tasks for today: " + saladges; }
     function buttonZwiebel() {
@@ -203,6 +227,7 @@ var Doenerbude;
     const gurke = document.getElementById("gurke-theke");
     const aufGur = document.getElementById("buttongur");
     const countergur = document.getElementById("countergur");
+    var gurkezahl = 0;
     var gurkeges = 10;
     var gurkekitchen = 10;
     var icongur = false;
@@ -216,12 +241,17 @@ var Doenerbude;
             aufGur.classList.remove("is-hidden");
             window.alert("Bitte Gurken Auffüllen!");
         }
+        gurkezahl++;
         gurkeges--;
+        GurkeZah();
         GurkeElemente();
         buttonGuerke();
     });
     function GurkeElemente() {
         document.querySelector(".gurke").innerHTML = "" + gurkeges;
+    }
+    function GurkeZah() {
+        document.querySelector(".gurkezahl").innerHTML = "Anzahl Gurken verkauft: " + gurkezahl;
     }
     //document.getElementById("salad").innerHTML = "Tasks for today: " + saladges; }
     function buttonGuerke() {

@@ -10,8 +10,8 @@ namespace Doenerbude {
         crc2.moveTo(1, 1);
         crc2.closePath();
             
-        crc2.save();
-        crc2.translate(0, 0);
+        
+        
 //Küche hinter der Theke 
         crc2.beginPath();
         crc2.rect(-30, 50, 200, 900);
@@ -35,7 +35,7 @@ namespace Doenerbude {
         crc2.fill();
 //Menü 
         crc2.beginPath();
-        crc2.rect(1000, 20, 300, 700);
+        crc2.rect(1000, 25, 300, 680);
         crc2.closePath();
         crc2.fillStyle = "#D59A8A";
         crc2.fill();
@@ -123,6 +123,12 @@ namespace Doenerbude {
 
         crc2.restore();
         crc2.restore();
+//Einstellugnen
+        crc2.beginPath();
+        crc2.rect(1025, 50, 290, 120);
+        crc2.closePath();
+        crc2.fillStyle = "white";
+        crc2.fill();
 
         }
     }

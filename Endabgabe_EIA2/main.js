@@ -17,8 +17,11 @@ var Doenerbude;
     const text = document.getElementById("text-redo");
     let teamAColor = "66b2ff";
     //let teamBColor: string = "ff3333";
-    let buttonClick = 2;
-    let buttonDone = false;
+    let buttonClickSal = 2;
+    let buttonClickOn = 2;
+    let buttonClickFlei = 2;
+    let buttonClickTom = 2;
+    let buttonClickGur = 2;
     Doenerbude.playerInformation = [
         //Mitarbeiter
         { x: 135, y: 275, team: "mitarbeiter" },
@@ -64,59 +67,54 @@ var Doenerbude;
         }
     }
     doneButtonSal.addEventListener("click", function () {
-        if (buttonClick == 1) {
-            buttonDone = true;
+        if (buttonClickSal == 1) {
             gemuese.classList.add("is-hidden");
             canvas.classList.add("is-hidden");
             text.classList.remove("is-hidden");
             redo.classList.remove("is-hidden");
-            window.alert("Die Simulation ist leider vorbei, bitte Lade die Seite neu um zur Startseite zu gelangen!");
+            window.alert("Ups dein Salat ist leer, bitte Lade die Seite neu um zur Startseite zu gelangen!");
         }
-        buttonClick--;
+        buttonClickSal--;
     });
     doneButtonFlei.addEventListener("click", function () {
-        if (buttonClick == 1) {
-            buttonDone = true;
+        if (buttonClickFlei == 1) {
             gemuese.classList.add("is-hidden");
             canvas.classList.add("is-hidden");
             text.classList.remove("is-hidden");
             redo.classList.remove("is-hidden");
-            window.alert("Die Simulation ist leider vorbei, bitte Lade die Seite neu um zur Startseite zu gelangen!");
+            window.alert("Ups dein Fleisch ist leer bitte Lade die Seite neu um zur Startseite zu gelangen!");
         }
-        buttonClick--;
+        buttonClickFlei--;
     });
     doneButtonTom.addEventListener("click", function () {
-        if (buttonClick == 1) {
-            buttonDone = true;
+        if (buttonClickTom == 1) {
             gemuese.classList.add("is-hidden");
             canvas.classList.add("is-hidden");
             text.classList.remove("is-hidden");
             redo.classList.remove("is-hidden");
-            window.alert("Die Simulation ist leider vorbei, bitte Lade die Seite neu um zur Startseite zu gelangen!");
+            window.alert("Ups deine Tomaten sind leer, bitte Lade die Seite neu um zur Startseite zu gelangen!");
         }
-        buttonClick--;
+        buttonClickTom--;
     });
     doneButtonGur.addEventListener("click", function () {
-        if (buttonClick == 1) {
-            buttonDone = true;
+        if (buttonClickGur == 1) {
             gemuese.classList.add("is-hidden");
             canvas.classList.add("is-hidden");
             text.classList.remove("is-hidden");
             redo.classList.remove("is-hidden");
-            window.alert("Die Simulation ist leider vorbei, bitte Lade die Seite neu um zur Startseite zu gelangen!");
+            window.alert("Ups deine Gurken sind leer, bitte Lade die Seite neu um zur Startseite zu gelangen!");
         }
-        buttonClick--;
+        buttonClickGur--;
     });
     doneButtonZwi.addEventListener("click", function () {
-        if (buttonClick == 1) {
-            buttonDone = true;
+        if (buttonClickOn == 1) {
             gemuese.classList.add("is-hidden");
             canvas.classList.add("is-hidden");
             text.classList.remove("is-hidden");
             redo.classList.remove("is-hidden");
-            window.alert("Die Simulation ist leider vorbei, bitte Lade die Seite neu um zur Startseite zu gelangen!");
+            window.alert("Ups deine Zwiebeln sind leer, bitte Lade die Seite neu um zur Startseite zu gelangen!");
         }
-        buttonClick--;
+        buttonClickOn--;
     });
     neu.addEventListener("click", function () {
         location.reload();
@@ -125,18 +123,24 @@ var Doenerbude;
         location.reload();
     });
     plus.addEventListener("click", function () {
-        let images = new Array("cucumber.png", "tomato.png", "meat.png", "onion.png", "salad.png");
+        let images = new Array("Emojis/cucumber-apple.png", "Emojis/tomato-apple.png", "Emojis/cut-of-meat-apple.png", "Emojis/onion-apple.png", "Emojis/green-salad-apple.png");
         let index = 0;
         const zutat1 = document.getElementById("random_img");
         index = Math.floor(Math.random() * images.length);
         document.getElementById("random_img").src = images[index];
         zutat1.classList.remove("is-hidden");
-        let images2 = new Array("salad.png", "cucumber.png", "tomato.png", "meat.png", "onion.png");
+        let images2 = new Array("Emojis/cucumber-apple.png", "Emojis/tomato-apple.png", "Emojis/cut-of-meat-apple.png", "Emojis/onion-apple.png", "Emojis/green-salad-apple.png");
         let index2 = 0;
         const zutat2 = document.getElementById("random_img2");
         index2 = Math.floor(Math.random() * images2.length);
         document.getElementById("random_img2").src = images2[index2];
         zutat2.classList.remove("is-hidden");
+        let images3 = new Array("Emojis/stuffed-flatbread-apple.png", "Emojis/burrito-apple.png", "Emojis/taco-apple.png");
+        let index3 = 0;
+        const zutat3 = document.getElementById("random_img3");
+        index3 = Math.floor(Math.random() * images3.length);
+        document.getElementById("random_img3").src = images3[index3];
+        zutat3.classList.remove("is-hidden");
     });
     function getUserPreferences() {
         let formData = new FormData(document.forms[0]);
@@ -156,7 +160,7 @@ var Doenerbude;
         if (_event.offsetX > 180 && _event.offsetX < 1030) {
             xpos = _event.offsetX;
         }
-        if (_event.offsetY > 0 && _event.offsetY < 700) {
+        if (_event.offsetY > 90 && _event.offsetY < 700) {
             ypos = _event.offsetY;
         }
         if (xpos > 0 && ypos > 0) {

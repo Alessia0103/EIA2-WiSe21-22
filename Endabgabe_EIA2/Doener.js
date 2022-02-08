@@ -9,8 +9,6 @@ var Doenerbude;
             Doenerbude.crc2.fillRect(50, 50, Doenerbude.crc2.canvas.width, Doenerbude.crc2.canvas.height);
             Doenerbude.crc2.moveTo(1, 1);
             Doenerbude.crc2.closePath();
-            Doenerbude.crc2.save();
-            Doenerbude.crc2.translate(0, 0);
             //Küche hinter der Theke 
             Doenerbude.crc2.beginPath();
             Doenerbude.crc2.rect(-30, 50, 200, 900);
@@ -33,7 +31,7 @@ var Doenerbude;
             Doenerbude.crc2.fill();
             //Menü 
             Doenerbude.crc2.beginPath();
-            Doenerbude.crc2.rect(1000, 20, 300, 700);
+            Doenerbude.crc2.rect(1000, 25, 300, 680);
             Doenerbude.crc2.closePath();
             Doenerbude.crc2.fillStyle = "#D59A8A";
             Doenerbude.crc2.fill();
@@ -117,6 +115,12 @@ var Doenerbude;
             Doenerbude.crc2.fill();
             Doenerbude.crc2.restore();
             Doenerbude.crc2.restore();
+            //Einstellugnen
+            Doenerbude.crc2.beginPath();
+            Doenerbude.crc2.rect(1025, 50, 290, 120);
+            Doenerbude.crc2.closePath();
+            Doenerbude.crc2.fillStyle = "white";
+            Doenerbude.crc2.fill();
         }
     }
     Doenerbude.Laden = Laden;
