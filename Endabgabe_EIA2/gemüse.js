@@ -279,5 +279,32 @@ var Doenerbude;
     function GurkeEle() {
         document.querySelector(".gurkeküche").innerHTML = "" + gurkekitchen;
     }
+    const doener = document.getElementById("doener");
+    var doenerzahl = 0;
+    doener.addEventListener("click", function () {
+        doenerzahl++;
+        doenerele();
+    });
+    function doenerele() {
+        document.querySelector(".doenerzahl").innerHTML = "Anzahl Döner verkauft: " + doenerzahl;
+    }
+    const yufka = document.getElementById("yufka");
+    var yufkazahl = 0;
+    yufka.addEventListener("click", function () {
+        yufkazahl++;
+        yufkaele();
+    });
+    function yufkaele() {
+        document.querySelector(".yufkazahl").innerHTML = "Anzahl Yufka verkauft: " + yufkazahl;
+    }
+    const taco = document.getElementById("taco");
+    var tacozahl = 0;
+    taco.addEventListener("click", function () {
+        tacozahl++;
+        tacoele();
+    });
+    function tacoele() {
+        document.querySelector(".tacozahl").innerHTML = "Anzahl Taco verkauft: " + tacozahl;
+    }
 })(Doenerbude || (Doenerbude = {}));
 //# sourceMappingURL=gem%C3%BCse.js.map

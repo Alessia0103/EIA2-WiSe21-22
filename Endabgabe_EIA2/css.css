@@ -126,6 +126,66 @@ html{
     cursor: pointer;
     justify-content: center;
 }
+.doenerzahl{
+    position: absolute;
+    text-align: left;
+    display: flex;
+    top: 510px;
+    font-size: 15;
+    opacity: 100%;
+    left: 1150px;
+    margin-left: auto;
+	margin-right: auto;
+	max-width: -webkit-max-content;  /* für Safari */	
+	max-width: -moz-max-content; 
+    color: #262523;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.yufkazahl{
+    position: absolute;
+    text-align: left;
+    display: flex;
+    top: 540px;
+    font-size: 15;
+    opacity: 100%;
+    left: 1150px;
+    margin-left: auto;
+	margin-right: auto;
+	max-width: -webkit-max-content;  /* für Safari */	
+	max-width: -moz-max-content; 
+    color: #262523;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.tacozahl{
+    position: absolute;
+    text-align: left;
+    display: flex;
+    top: 570px;
+    font-size: 15;
+    opacity: 100%;
+    left: 1150px;
+    margin-left: auto;
+	margin-right: auto;
+	max-width: -webkit-max-content;  /* für Safari */	
+	max-width: -moz-max-content; 
+    color: #262523;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.total{
+    position: absolute;
+    text-align: left;
+    display: flex;
+    top: 600px;
+    font-size: 15;
+    opacity: 100%;
+    left: 1150px;
+    margin-left: auto;
+	margin-right: auto;
+	max-width: -webkit-max-content;  /* für Safari */	
+	max-width: -moz-max-content; 
+    color: #262523;
+    font-family: Arial, Helvetica, sans-serif;
+}
 .fleischzahl{
     position: absolute;
     text-align: left;

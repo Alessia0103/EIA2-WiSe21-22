@@ -286,5 +286,42 @@ namespace Doenerbude {
         (document.querySelector(".gurkeküche")as HTMLInputElement).innerHTML = "" + gurkekitchen; }
 
     
+    const doener: Element = (document.getElementById("doener")as HTMLInputElement);
+    var doenerzahl: number = 0;
+
+    doener.addEventListener("click", function (): void {
+        doenerzahl++;
+        doenerele();
+        });
+
+    function doenerele(): void {
+            (document.querySelector(".doenerzahl")as HTMLInputElement).innerHTML = "Anzahl Döner verkauft: " + doenerzahl; }
+
+    const yufka: Element = (document.getElementById("yufka")as HTMLInputElement);
+    var yufkazahl: number = 0;
+        
+    yufka.addEventListener("click", function (): void {
+        yufkazahl++;
+        yufkaele();
+        });
+        
+    function yufkaele(): void {
+                 (document.querySelector(".yufkazahl")as HTMLInputElement).innerHTML = "Anzahl Yufka verkauft: " + yufkazahl; }
+
+    const taco: Element = (document.getElementById("taco")as HTMLInputElement);
+    var tacozahl: number = 0;
+                        
+    taco.addEventListener("click", function (): void {
+        tacozahl++;
+        tacoele();
+         });
+                        
+    function tacoele(): void {
+                (document.querySelector(".tacozahl")as HTMLInputElement).innerHTML = "Anzahl Taco verkauft: " + tacozahl; }
+
+
+
+
+    
 }
 
