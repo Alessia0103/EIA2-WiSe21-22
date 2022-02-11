@@ -13,6 +13,7 @@ namespace Doenerbude {
 
     public constructor(_position: Vector) {
             super(_position);
+            this.position.set(1100, 320);
             this.velocity.set(150, 0);
             this.mood = this.moods[3];
             this.state = STATE.QUEUE;
@@ -23,26 +24,26 @@ namespace Doenerbude {
 
         switch (this.state) {
             case STATE.QUEUE: 
-            let nextInLine: Customer = test[test.indexOf(this) + 1];
-            if (this.position.x >= middleX - 100) {
+            //let nextInLine: Customer = test[test.indexOf(this) + 1];
+            if (this.position.x - middleX) {
                 this.velocity.set(0, 0);
                 this.state = STATE.WAITING;
                 break;
             }
-            else if (nextInLine) {
-                if ((this.velocity.length * _timeslice) + 150 > new Vector(nextInLine.position.x + this.position.x, nextInLine.position.y + this.position.y).length) {
-                    this.velocity.set(0, 0);
-            }
-            else {
-                this.velocity.set(150, 0);
-            }
+            //else if (nextInLine) {
+               // if ((this.velocity.length * _timeslice) + 150 > new Vector(nextInLine.position.x - this.position.x,  nextInLine.position.y - this.position.y).length) {
+                   //this.velocity.set(0, 0);
+            //}
+            //else {
+                //this.velocity.set(150, 0);
+            //}
 
-        }
-            break;
-        case STATE.LEAVING: 
-            if (this.position.y > crc2.canvas.height - 10)
-            removeCustomer(this);
-    }
+       // }
+            //break;
+        //case STATE.LEAVING: 
+           // if (this.position.y > crc2.canvas.height + 10)
+            //removeCustomer(this);
+    //}
     }
     public receiveFood(): void {
         this.velocity.set(0, 150);

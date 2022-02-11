@@ -72,7 +72,7 @@ namespace  Doenerbude {
         middleX = crc2.canvas.width / 2;
         middleY = crc2.canvas.height / 2;
 
-        customerSpawnPoint = new Vector(-1100, middleY);
+        customerSpawnPoint = new Vector(550, middleY);
 
         
         lastFrame = performance.now();
@@ -109,7 +109,7 @@ namespace  Doenerbude {
 }
 
     function update(): void {
-    const customer: Customer = new Customer(new Vector(crc2.canvas.width / 2, 15));
+    const customer: Customer = new Customer(new Vector(crc2.canvas.width / 0, 0));
     let frameTime: number = performance.now() - lastFrame;
     lastFrame = performance.now();
     for (let person of test) {

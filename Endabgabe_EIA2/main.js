@@ -47,7 +47,7 @@ var Doenerbude;
         moveables.push(Doenerbude.dali);
         Doenerbude.middleX = Doenerbude.crc2.canvas.width / 2;
         Doenerbude.middleY = Doenerbude.crc2.canvas.height / 2;
-        customerSpawnPoint = new Doenerbude.Vector(-1100, Doenerbude.middleY);
+        customerSpawnPoint = new Doenerbude.Vector(550, Doenerbude.middleY);
         lastFrame = performance.now();
         update();
         setInterval(customerLeave, 4100);
@@ -75,7 +75,7 @@ var Doenerbude;
         console.log("weg");
     }
     function update() {
-        const customer = new Doenerbude.Customer(new Doenerbude.Vector(Doenerbude.crc2.canvas.width / 2, 15));
+        const customer = new Doenerbude.Customer(new Doenerbude.Vector(Doenerbude.crc2.canvas.width / 0, 0));
         let frameTime = performance.now() - lastFrame;
         lastFrame = performance.now();
         for (let person of Doenerbude.test) {
