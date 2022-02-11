@@ -12,6 +12,7 @@ namespace Doenerbude {
             constructor(_position: Vector, _color: string) {
                 super(_position);
                 this.color = _color;
+                
             }
          
     public draw(): void {

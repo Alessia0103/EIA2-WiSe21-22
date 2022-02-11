@@ -5,7 +5,7 @@ var Doenerbude;
         draw() {
             //Canvas "Grundriss von dem Laden"
             Doenerbude.crc2.beginPath();
-            Doenerbude.crc2.fillStyle = "#F2DDCC";
+            Doenerbude.crc2.fillStyle = "#F2F0F0";
             Doenerbude.crc2.fillRect(50, 50, Doenerbude.crc2.canvas.width, Doenerbude.crc2.canvas.height);
             Doenerbude.crc2.moveTo(1, 1);
             Doenerbude.crc2.closePath();
@@ -13,7 +13,7 @@ var Doenerbude;
             Doenerbude.crc2.beginPath();
             Doenerbude.crc2.rect(-30, 50, 200, 900);
             Doenerbude.crc2.closePath();
-            Doenerbude.crc2.fillStyle = "#A2635C";
+            Doenerbude.crc2.fillStyle = "#BEBABF";
             Doenerbude.crc2.fill();
             Doenerbude.crc2.save();
             Doenerbude.crc2.translate(25, 25);
@@ -21,7 +21,7 @@ var Doenerbude;
             Doenerbude.crc2.beginPath();
             Doenerbude.crc2.rect(380, 25, 250, 500);
             Doenerbude.crc2.closePath();
-            Doenerbude.crc2.fillStyle = "#A2635C";
+            Doenerbude.crc2.fillStyle = "#BEBABF";
             Doenerbude.crc2.fill();
             //Brett auf er Theke zum bedienen 
             Doenerbude.crc2.beginPath();
@@ -33,7 +33,7 @@ var Doenerbude;
             Doenerbude.crc2.beginPath();
             Doenerbude.crc2.rect(1000, 25, 300, 680);
             Doenerbude.crc2.closePath();
-            Doenerbude.crc2.fillStyle = "#D59A8A";
+            Doenerbude.crc2.fillStyle = "#D8D7D9";
             Doenerbude.crc2.fill();
             // Bowls für die Zutaten Nr.1
             Doenerbude.crc2.beginPath();

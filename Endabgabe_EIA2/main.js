@@ -1,7 +1,9 @@
 "use strict";
 var Doenerbude;
 (function (Doenerbude) {
-    //export let animation: boolean = false;
+    Doenerbude.test = [];
+    let lastFrame;
+    let customerSpawnPoint;
     let landingPage;
     let startbutton;
     const neu = document.getElementById("redo");
@@ -16,19 +18,12 @@ var Doenerbude;
     const plus = document.getElementById("plus");
     const text = document.getElementById("text-redo");
     let teamAColor = "66b2ff";
-    //let teamBColor: string = "ff3333";
     let buttonClickSal = 2;
     let buttonClickOn = 2;
     let buttonClickFlei = 2;
     let buttonClickTom = 2;
     let buttonClickGur = 2;
-    Doenerbude.playerInformation = [
-        //Mitarbeiter
-        { x: 135, y: 275, team: "mitarbeiter" },
-        { x: 180, y: 100, team: "mitarbeiter" }
-    ];
     let moveables = [];
-    //let allPlayers: Ali[] = [];
     window.addEventListener("load", handleLoad);
     function handleLoad() {
         // Get the canvas and rendering context
@@ -39,10 +34,7 @@ var Doenerbude;
         landingPage = document.getElementById("settings");
         startbutton = document.getElementById("startbutton");
         startbutton.addEventListener("click", startSimulation);
-        // Install event-listeners on canvas to be able to shoot the ball, switch players or see their details
         canvas.addEventListener("click", handleCanvasClick);
-        //canvas.addEventListener("mousemove", dragPlayer);
-        //canvas.addEventListener("mouseup", switchPlayer);
     }
     function startSimulation() {
         // Hide settings container
@@ -51,12 +43,18 @@ var Doenerbude;
         gemuese.classList.remove("is-hidden");
         getUserPreferences();
         Doenerbude.doenerladen = new Doenerbude.Laden();
-        //createpeople();
         Doenerbude.dali = new Doenerbude.Ali(new Doenerbude.Vector(300, 300), teamAColor);
         moveables.push(Doenerbude.dali);
+        Doenerbude.middleX = Doenerbude.crc2.canvas.width / 2;
+        Doenerbude.middleY = Doenerbude.crc2.canvas.height / 2;
+        customerSpawnPoint = new Doenerbude.Vector(-1100, Doenerbude.middleY);
+        lastFrame = performance.now();
+        update();
+        setInterval(customerLeave, 4100);
+        newCustomer();
+        window.setInterval(newCustomer, 3900);
         window.setInterval(drawUpdate, 20);
         window.setInterval(function () {
-            //if (animation == true) 
             animationUpdate();
         }, 20);
     }
@@ -66,6 +64,31 @@ var Doenerbude;
             moveable.draw();
         }
     }
+    function newCustomer() {
+        if (Doenerbude.test.length < 5) {
+            Doenerbude.test.push(new Doenerbude.Customer(new Doenerbude.Vector(customerSpawnPoint.x, customerSpawnPoint.y)));
+            console.log("hi");
+        }
+    }
+    function customerLeave() {
+        Doenerbude.test[0].receiveFood();
+        console.log("weg");
+    }
+    function update() {
+        const customer = new Doenerbude.Customer(new Doenerbude.Vector(Doenerbude.crc2.canvas.width / 2, 15));
+        let frameTime = performance.now() - lastFrame;
+        lastFrame = performance.now();
+        for (let person of Doenerbude.test) {
+            person.move(frameTime / 1000);
+            person.draw();
+            moveables.push(customer);
+        }
+        window.requestAnimationFrame(update);
+    }
+    function removeCustomer(_customer) {
+        Doenerbude.test.splice(Doenerbude.test.indexOf(_customer), 1);
+    }
+    Doenerbude.removeCustomer = removeCustomer;
     doneButtonSal.addEventListener("click", function () {
         if (buttonClickSal == 1) {
             gemuese.classList.add("is-hidden");
@@ -145,12 +168,7 @@ var Doenerbude;
     function getUserPreferences() {
         let formData = new FormData(document.forms[0]);
         teamAColor = formData.get("memberColorPicker");
-        //teamBColor = <string>formData.get("TeamBColorPicker"); 
     }
-    //function createpeople(): void {
-    // for (let i: number = 0; i < 3; i++) {
-    //allPlayers.push(dali);
-    //}}
     function handleCanvasClick(_event) {
         mitarbeiters(_event);
     }
@@ -172,7 +190,7 @@ var Doenerbude;
     }
     function animationUpdate() {
         for (let moveable of moveables) {
-            moveable.move();
+            moveable.move(150);
         }
     }
 })(Doenerbude || (Doenerbude = {}));

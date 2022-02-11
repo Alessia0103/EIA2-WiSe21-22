@@ -1,16 +1,19 @@
 namespace Doenerbude {
-
-    // Superclass moveable
     export abstract class Moveable {
-
         public position: Vector;
+        protected velocity: Vector;
 
-        constructor(_position: Vector) {
+        protected constructor(_position: Vector) {
             this.position = _position;
+            this.velocity = new Vector(0, 0);
         }
 
-        public abstract draw(): void;
+        public move(_timeslice: number): void {
+            let offset: Vector = this.velocity.copy();
+            offset.scale(_timeslice);
+            this.position.add(offset);
+        }
 
-        public abstract move(): void;
+        abstract draw(): void;
     }
 }
