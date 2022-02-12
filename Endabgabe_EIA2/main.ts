@@ -6,9 +6,12 @@ namespace  Doenerbude {
     let lastFrame: number;
     export let crc2: CanvasRenderingContext2D;
     export let dali: Ali;
+    export let sali: Ali;
     export let doenerladen: Laden;
-    let customerSpawnPoint: Vector;
-   
+    export let customerSpawnPoint: Vector;
+    export let dx: number  = 2;
+    export let dy: number  = -2;
+    
     
   
     let landingPage: HTMLDivElement;
@@ -25,6 +28,9 @@ namespace  Doenerbude {
     const plus: Element = (document.getElementById("plus")as HTMLInputElement);
     const text: Element = (document.getElementById("text-redo")as HTMLInputElement);
     let teamAColor: string = "66b2ff";
+    let tamAMood: string = "#2F7360";
+    
+    
     
     let buttonClickSal: number = 2;
    
@@ -51,7 +57,7 @@ namespace  Doenerbude {
             startbutton = <HTMLDivElement>document.getElementById("startbutton");
 
             startbutton.addEventListener("click", startSimulation);
-
+            canvas.addEventListener("click", mitarbeiter1);
             canvas.addEventListener("click", handleCanvasClick); 
     }
 
@@ -61,19 +67,18 @@ namespace  Doenerbude {
         canvas.classList.remove("is-hidden");
         
         gemuese.classList.remove("is-hidden");
+        
 
         getUserPreferences();
 
         doenerladen = new Laden();
-
-        dali = new Ali(new Vector(300, 300), teamAColor);
-        moveables.push(dali); 
+        staff();
 
         middleX = crc2.canvas.width / 2;
         middleY = crc2.canvas.height / 2;
 
-        customerSpawnPoint = new Vector(550, middleY);
-
+        customerSpawnPoint = new Vector(50, middleY);
+        
         
         lastFrame = performance.now();
         update();
@@ -96,11 +101,16 @@ namespace  Doenerbude {
         moveable.draw(); 
     } 
 }
+   
 
     function newCustomer(): void {
-    if (test.length < 5) {
+        dx += middleY;
+        dy += middleX;
+        if (test.length < 5) {
         test.push(new Customer(new Vector(customerSpawnPoint.x, customerSpawnPoint.y)));
-        console.log("hi");
+       
+    
+        console.log("weg");
     }
 }
     function customerLeave(): void {
@@ -221,6 +231,18 @@ namespace  Doenerbude {
     
      });
 
+
+    function staff(): void {
+        
+            dali = new Ali(new Vector(300, 300), teamAColor, tamAMood);
+            sali = new Ali(new Vector(500, 600), teamAColor, tamAMood);
+            moveables.push(dali);
+            moveables.push(sali);
+         
+    }
+   
+
+
     function getUserPreferences(): void {
 
         let formData: FormData = new FormData(document.forms[0]); 
@@ -228,14 +250,34 @@ namespace  Doenerbude {
     }
 
     function handleCanvasClick(_event: MouseEvent): void {
-            mitarbeiters(_event);
+        if (_event.shiftKey || _event.altKey) {
+            mitarbeiter1(_event); 
+        }
+        mitarbeiters(_event);
              }
-    
 
+    function mitarbeiter1(_event: MouseEvent): void {
+        let xpos: number = 0;
+        let ypos: number = 0;
+        if (_event.shiftKey) {
+        if (_event.offsetX > 180 && _event.offsetX < 1030) {
+            xpos = _event.offsetX;
+        }
+        if (_event.offsetY > 90 && _event.offsetY < 700) {
+            ypos = _event.offsetY;
+        }
+
+        if (xpos > 0 && ypos > 0) {
+            sali.destination = new Vector(xpos, ypos);
+            sali.startMoving = true;
+            }
+    }}
+    
     function mitarbeiters(_event: MouseEvent): void {
         let xpos: number = 0;
         let ypos: number = 0;
-
+        
+        if (_event.altKey) {
         if (_event.offsetX > 180 && _event.offsetX < 1030) {
             xpos = _event.offsetX;
         }
@@ -248,8 +290,7 @@ namespace  Doenerbude {
             dali.startMoving = true;
             //animation = true;
             console.log("HI");
-        }
-
+        }}   
     }
 
     function animationUpdate(): void { 

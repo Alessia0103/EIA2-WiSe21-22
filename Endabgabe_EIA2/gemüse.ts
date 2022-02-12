@@ -289,9 +289,20 @@ namespace Doenerbude {
     const doener: Element = (document.getElementById("doener")as HTMLInputElement);
     var doenerzahl: number = 0;
 
+    var totaleY: number = 4 ;
+    var totaleD: number = 3;
+    var totaleT: number = 2;
+
+    var totaleges: number = totaleD + totaleT + totaleY;
+    
+    
+
     doener.addEventListener("click", function (): void {
+
         doenerzahl++;
+        totaleD;
         doenerele();
+        total();
         });
 
     function doenerele(): void {
@@ -301,8 +312,11 @@ namespace Doenerbude {
     var yufkazahl: number = 0;
         
     yufka.addEventListener("click", function (): void {
+        
         yufkazahl++;
+        totaleY;
         yufkaele();
+        total();
         });
         
     function yufkaele(): void {
@@ -312,12 +326,20 @@ namespace Doenerbude {
     var tacozahl: number = 0;
                         
     taco.addEventListener("click", function (): void {
+        
         tacozahl++;
+        totaleT;
         tacoele();
+        total();
+        
          });
                         
     function tacoele(): void {
                 (document.querySelector(".tacozahl")as HTMLInputElement).innerHTML = "Anzahl Taco verkauft: " + tacozahl; }
+
+    function total(): void {
+        (document.querySelector(".total")as HTMLInputElement).innerHTML = "" + totaleges;
+    }
 
 
 

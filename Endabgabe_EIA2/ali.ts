@@ -6,12 +6,16 @@ namespace Doenerbude {
             public destination: Vector; 
             public startMoving: boolean = false;
             public radius: number = 40;
-
+            public x: number;
+            public y: number;
+            
+            public strokecolor: string;
             private color: string;
     
-            constructor(_position: Vector, _color: string) {
+            constructor(_position: Vector, _color: string, _colors: string) {
                 super(_position);
                 this.color = _color;
+                this.strokecolor = _colors;
                 
             }
          
@@ -22,9 +26,18 @@ namespace Doenerbude {
         crc2.beginPath();
         crc2.arc(this.position.x, this.position.y, this.radius , 0, 2 * Math.PI);
         crc2.closePath();
-        crc2.fillStyle = this.color; // yellow
+        crc2.stroke();
+        crc2.lineWidth = 10;
+        crc2.strokeStyle = this.strokecolor;
+        crc2.fillStyle = this.color;
         crc2.fill();
+
+        setTimeout(() => {
+            this.strokecolor = "#BF4A30";
+        },         35000);
+    
     }
+    
 
 public move(): void {
         

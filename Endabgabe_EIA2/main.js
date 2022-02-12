@@ -3,7 +3,8 @@ var Doenerbude;
 (function (Doenerbude) {
     Doenerbude.test = [];
     let lastFrame;
-    let customerSpawnPoint;
+    Doenerbude.dx = 2;
+    Doenerbude.dy = -2;
     let landingPage;
     let startbutton;
     const neu = document.getElementById("redo");
@@ -18,6 +19,7 @@ var Doenerbude;
     const plus = document.getElementById("plus");
     const text = document.getElementById("text-redo");
     let teamAColor = "66b2ff";
+    let tamAMood = "#2F7360";
     let buttonClickSal = 2;
     let buttonClickOn = 2;
     let buttonClickFlei = 2;
@@ -34,6 +36,7 @@ var Doenerbude;
         landingPage = document.getElementById("settings");
         startbutton = document.getElementById("startbutton");
         startbutton.addEventListener("click", startSimulation);
+        canvas.addEventListener("click", mitarbeiter1);
         canvas.addEventListener("click", handleCanvasClick);
     }
     function startSimulation() {
@@ -43,11 +46,10 @@ var Doenerbude;
         gemuese.classList.remove("is-hidden");
         getUserPreferences();
         Doenerbude.doenerladen = new Doenerbude.Laden();
-        Doenerbude.dali = new Doenerbude.Ali(new Doenerbude.Vector(300, 300), teamAColor);
-        moveables.push(Doenerbude.dali);
+        staff();
         Doenerbude.middleX = Doenerbude.crc2.canvas.width / 2;
         Doenerbude.middleY = Doenerbude.crc2.canvas.height / 2;
-        customerSpawnPoint = new Doenerbude.Vector(550, Doenerbude.middleY);
+        Doenerbude.customerSpawnPoint = new Doenerbude.Vector(50, Doenerbude.middleY);
         lastFrame = performance.now();
         update();
         setInterval(customerLeave, 4100);
@@ -65,9 +67,11 @@ var Doenerbude;
         }
     }
     function newCustomer() {
+        Doenerbude.dx += Doenerbude.middleY;
+        Doenerbude.dy += Doenerbude.middleX;
         if (Doenerbude.test.length < 5) {
-            Doenerbude.test.push(new Doenerbude.Customer(new Doenerbude.Vector(customerSpawnPoint.x, customerSpawnPoint.y)));
-            console.log("hi");
+            Doenerbude.test.push(new Doenerbude.Customer(new Doenerbude.Vector(Doenerbude.customerSpawnPoint.x, Doenerbude.customerSpawnPoint.y)));
+            console.log("weg");
         }
     }
     function customerLeave() {
@@ -165,27 +169,54 @@ var Doenerbude;
         document.getElementById("random_img3").src = images3[index3];
         zutat3.classList.remove("is-hidden");
     });
+    function staff() {
+        Doenerbude.dali = new Doenerbude.Ali(new Doenerbude.Vector(300, 300), teamAColor, tamAMood);
+        Doenerbude.sali = new Doenerbude.Ali(new Doenerbude.Vector(500, 600), teamAColor, tamAMood);
+        moveables.push(Doenerbude.dali);
+        moveables.push(Doenerbude.sali);
+    }
     function getUserPreferences() {
         let formData = new FormData(document.forms[0]);
         teamAColor = formData.get("memberColorPicker");
     }
     function handleCanvasClick(_event) {
+        if (_event.shiftKey || _event.altKey) {
+            mitarbeiter1(_event);
+        }
         mitarbeiters(_event);
+    }
+    function mitarbeiter1(_event) {
+        let xpos = 0;
+        let ypos = 0;
+        if (_event.shiftKey) {
+            if (_event.offsetX > 180 && _event.offsetX < 1030) {
+                xpos = _event.offsetX;
+            }
+            if (_event.offsetY > 90 && _event.offsetY < 700) {
+                ypos = _event.offsetY;
+            }
+            if (xpos > 0 && ypos > 0) {
+                Doenerbude.sali.destination = new Doenerbude.Vector(xpos, ypos);
+                Doenerbude.sali.startMoving = true;
+            }
+        }
     }
     function mitarbeiters(_event) {
         let xpos = 0;
         let ypos = 0;
-        if (_event.offsetX > 180 && _event.offsetX < 1030) {
-            xpos = _event.offsetX;
-        }
-        if (_event.offsetY > 90 && _event.offsetY < 700) {
-            ypos = _event.offsetY;
-        }
-        if (xpos > 0 && ypos > 0) {
-            Doenerbude.dali.destination = new Doenerbude.Vector(xpos, ypos);
-            Doenerbude.dali.startMoving = true;
-            //animation = true;
-            console.log("HI");
+        if (_event.altKey) {
+            if (_event.offsetX > 180 && _event.offsetX < 1030) {
+                xpos = _event.offsetX;
+            }
+            if (_event.offsetY > 90 && _event.offsetY < 700) {
+                ypos = _event.offsetY;
+            }
+            if (xpos > 0 && ypos > 0) {
+                Doenerbude.dali.destination = new Doenerbude.Vector(xpos, ypos);
+                Doenerbude.dali.startMoving = true;
+                //animation = true;
+                console.log("HI");
+            }
         }
     }
     function animationUpdate() {

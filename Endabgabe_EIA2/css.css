@@ -161,19 +161,15 @@ html{
     padding: 5px;
 }
 .total{
-    position: absolute;
-    text-align: left;
-    display: flex;
-    top: 600px;
-    font-size: 15;
-    opacity: 100%;
+    background-color: #F2F2F2;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 205px;
+    height: 20px;
     left: 1150px;
-    margin-left: auto;
-	margin-right: auto;
-	max-width: -webkit-max-content;  /* für Safari */	
-	max-width: -moz-max-content; 
-    color: #262523;
-    font-family: Arial, Helvetica, sans-serif;
+    top: 630px;
+    position: absolute;
+    z-index: 5000;
+    padding: 5px;
 }
 .fleischzahl{
     background-color: #F2F2F2;
