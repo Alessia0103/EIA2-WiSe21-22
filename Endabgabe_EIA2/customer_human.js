@@ -27,6 +27,7 @@ var Doenerbude;
             Doenerbude.crc2.restore();
         }
         move(_timeslice) {
+            super.move(_timeslice);
             switch (this.state) {
                 case STATE.QUEUE:
                     let nextInLine = Doenerbude.test[Doenerbude.test.indexOf(this) - 1];

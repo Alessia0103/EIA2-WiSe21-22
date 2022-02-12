@@ -74,8 +74,8 @@ namespace  Doenerbude {
         doenerladen = new Laden();
         staff();
 
-        middleY += dx;
-        middleX -= dy;
+        middleX = dx;
+        middleY = dy;
 
         customerSpawnPoint = new Vector(1150, 300);
         
@@ -85,7 +85,7 @@ namespace  Doenerbude {
 
         setInterval(customerLeave, 4100);
         newCustomer();
-        window.setInterval(newCustomer, 3900); 
+        window.setInterval(newCustomer, 2900); 
 
         window.setInterval(drawUpdate, 20);
 

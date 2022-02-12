@@ -33,7 +33,7 @@ namespace Doenerbude {
     
     public move(_timeslice: number): void {
         
-       
+        super.move(_timeslice);
         switch (this.state) {
         
                 case STATE.QUEUE: 

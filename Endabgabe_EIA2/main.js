@@ -48,14 +48,14 @@ var Doenerbude;
         getUserPreferences();
         Doenerbude.doenerladen = new Doenerbude.Laden();
         staff();
-        Doenerbude.middleY += Doenerbude.dx;
-        Doenerbude.middleX -= Doenerbude.dy;
+        Doenerbude.middleX = Doenerbude.dx;
+        Doenerbude.middleY = Doenerbude.dy;
         Doenerbude.customerSpawnPoint = new Doenerbude.Vector(1150, 300);
         lastFrame = performance.now();
         update();
         setInterval(customerLeave, 4100);
         newCustomer();
-        window.setInterval(newCustomer, 3900);
+        window.setInterval(newCustomer, 2900);
         window.setInterval(drawUpdate, 20);
         window.setInterval(function () {
             animationUpdate();
