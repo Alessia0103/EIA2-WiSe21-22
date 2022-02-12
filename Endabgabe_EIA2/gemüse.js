@@ -280,36 +280,33 @@ var Doenerbude;
         document.querySelector(".gurkeküche").innerHTML = "" + gurkekitchen;
     }
     const doener = document.getElementById("doener");
+    const yufka = document.getElementById("yufka");
+    const taco = document.getElementById("taco");
     var doenerzahl = 0;
-    var totaleY = 4;
-    var totaleD = 3;
-    var totaleT = 2;
-    var totaleges = totaleD + totaleT + totaleY;
+    var yufkazahl = 0;
+    var tacozahl = 0;
+    var totaleges;
     doener.addEventListener("click", function () {
         doenerzahl++;
-        totaleD;
+        totaleges = (doenerzahl) * 4 + (yufkazahl) * 3 + (tacozahl) * 2;
         doenerele();
         total();
     });
     function doenerele() {
         document.querySelector(".doenerzahl").innerHTML = "Anzahl Döner verkauft: " + doenerzahl;
     }
-    const yufka = document.getElementById("yufka");
-    var yufkazahl = 0;
     yufka.addEventListener("click", function () {
         yufkazahl++;
-        totaleY;
+        totaleges = (doenerzahl) * 4 + (yufkazahl) * 3 + (tacozahl) * 2;
         yufkaele();
         total();
     });
     function yufkaele() {
         document.querySelector(".yufkazahl").innerHTML = "Anzahl Yufka verkauft: " + yufkazahl;
     }
-    const taco = document.getElementById("taco");
-    var tacozahl = 0;
     taco.addEventListener("click", function () {
         tacozahl++;
-        totaleT;
+        totaleges = (doenerzahl) * 4 + (yufkazahl) * 3 + (tacozahl) * 2;
         tacoele();
         total();
     });
@@ -317,7 +314,7 @@ var Doenerbude;
         document.querySelector(".tacozahl").innerHTML = "Anzahl Taco verkauft: " + tacozahl;
     }
     function total() {
-        document.querySelector(".total").innerHTML = "" + totaleges;
+        document.querySelector(".total").innerHTML = "Total: " + totaleges + " Euro";
     }
 })(Doenerbude || (Doenerbude = {}));
 //# sourceMappingURL=gem%C3%BCse.js.map

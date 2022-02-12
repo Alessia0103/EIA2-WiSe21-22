@@ -7,6 +7,7 @@ var Doenerbude;
             this.startMoving = false;
             this.radius = 40;
             this.color = _color;
+            this.velocity.set(150, 0);
             this.strokecolor = _colors;
         }
         draw() {
@@ -22,7 +23,7 @@ var Doenerbude;
             Doenerbude.crc2.fill();
             setTimeout(() => {
                 this.strokecolor = "#BF4A30";
-            }, 35000);
+            }, 3500);
         }
         move() {
             if (this.destination) {
@@ -31,6 +32,7 @@ var Doenerbude;
                 if (this.startMoving == true) {
                     this.destination.x -= distance;
                     this.destination.y -= distance;
+                    this.velocity.set(150, 0);
                     this.startMoving = false;
                 }
                 direction.scale(1 / 50);
@@ -40,6 +42,9 @@ var Doenerbude;
                 else {
                     this.position.add(direction);
                 }
+                setTimeout(() => {
+                    this.velocity.set(450, 0);
+                }, 3500);
             }
         }
     }

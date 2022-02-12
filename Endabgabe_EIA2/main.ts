@@ -2,15 +2,15 @@ namespace  Doenerbude {
 
     export let middleX: number;
     export let middleY: number;
-    export let test: Customer[] = [];
+    export let test: Human[] = [];
     let lastFrame: number;
     export let crc2: CanvasRenderingContext2D;
     export let dali: Ali;
     export let sali: Ali;
     export let doenerladen: Laden;
     export let customerSpawnPoint: Vector;
-    export let dx: number  = 2;
-    export let dy: number  = -2;
+    export let dx: number  = 0;
+    export let dy: number  = 1;
     
     
   
@@ -67,17 +67,17 @@ namespace  Doenerbude {
         canvas.classList.remove("is-hidden");
         
         gemuese.classList.remove("is-hidden");
-        
+        moodStaff();
 
         getUserPreferences();
 
         doenerladen = new Laden();
         staff();
 
-        middleX = crc2.canvas.width / 2;
-        middleY = crc2.canvas.height / 2;
+        middleY += dx;
+        middleX -= dy;
 
-        customerSpawnPoint = new Vector(50, middleY);
+        customerSpawnPoint = new Vector(1150, 300);
         
         
         lastFrame = performance.now();
@@ -104,13 +104,12 @@ namespace  Doenerbude {
    
 
     function newCustomer(): void {
-        dx += middleY;
-        dy += middleX;
+    
         if (test.length < 5) {
-        test.push(new Customer(new Vector(customerSpawnPoint.x, customerSpawnPoint.y)));
+            test.push(new Human(new Vector(customerSpawnPoint.x, customerSpawnPoint.y)));
        
     
-        console.log("weg");
+            console.log("weg");
     }
 }
     function customerLeave(): void {
@@ -119,17 +118,17 @@ namespace  Doenerbude {
 }
 
     function update(): void {
-    const customer: Customer = new Customer(new Vector(crc2.canvas.width / 0, 0));
+    
     let frameTime: number = performance.now() - lastFrame;
     lastFrame = performance.now();
     for (let person of test) {
         person.move(frameTime / 1000);
         person.draw();
-        moveables.push(customer);
+       
     }
     window.requestAnimationFrame(update);
 }
-    export function removeCustomer(_customer: Customer): void {
+    export function removeCustomer(_customer: Human): void {
     test.splice(test.indexOf(_customer), 1);
 }
     
@@ -240,6 +239,11 @@ namespace  Doenerbude {
             moveables.push(sali);
          
     }
+    function moodStaff(): void {
+
+            tamAMood = "#BF4A30";
+            console.log("color");
+     }        
    
 
 

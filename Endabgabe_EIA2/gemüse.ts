@@ -287,20 +287,18 @@ namespace Doenerbude {
 
     
     const doener: Element = (document.getElementById("doener")as HTMLInputElement);
+    const yufka: Element = (document.getElementById("yufka")as HTMLInputElement);
+    const taco: Element = (document.getElementById("taco")as HTMLInputElement);
     var doenerzahl: number = 0;
+    var yufkazahl: number = 0;
+    var tacozahl: number = 0;
+    var totaleges: number;
 
-    var totaleY: number = 4 ;
-    var totaleD: number = 3;
-    var totaleT: number = 2;
-
-    var totaleges: number = totaleD + totaleT + totaleY;
-    
-    
 
     doener.addEventListener("click", function (): void {
-
         doenerzahl++;
-        totaleD;
+        totaleges = (doenerzahl) * 4 + (yufkazahl) * 3 + (tacozahl) * 2;
+        
         doenerele();
         total();
         });
@@ -308,13 +306,13 @@ namespace Doenerbude {
     function doenerele(): void {
             (document.querySelector(".doenerzahl")as HTMLInputElement).innerHTML = "Anzahl Döner verkauft: " + doenerzahl; }
 
-    const yufka: Element = (document.getElementById("yufka")as HTMLInputElement);
-    var yufkazahl: number = 0;
+    
+    
         
     yufka.addEventListener("click", function (): void {
         
         yufkazahl++;
-        totaleY;
+        totaleges = (doenerzahl) * 4 + (yufkazahl) * 3 + (tacozahl) * 2;
         yufkaele();
         total();
         });
@@ -322,13 +320,13 @@ namespace Doenerbude {
     function yufkaele(): void {
                  (document.querySelector(".yufkazahl")as HTMLInputElement).innerHTML = "Anzahl Yufka verkauft: " + yufkazahl; }
 
-    const taco: Element = (document.getElementById("taco")as HTMLInputElement);
-    var tacozahl: number = 0;
+    
+    
                         
     taco.addEventListener("click", function (): void {
         
         tacozahl++;
-        totaleT;
+        totaleges = (doenerzahl) * 4 + (yufkazahl) * 3 + (tacozahl) * 2;
         tacoele();
         total();
         
@@ -337,8 +335,11 @@ namespace Doenerbude {
     function tacoele(): void {
                 (document.querySelector(".tacozahl")as HTMLInputElement).innerHTML = "Anzahl Taco verkauft: " + tacozahl; }
 
+    
+    
+
     function total(): void {
-        (document.querySelector(".total")as HTMLInputElement).innerHTML = "" + totaleges;
+        (document.querySelector(".total")as HTMLInputElement).innerHTML = "Total: " + totaleges + " Euro";
     }
 
 

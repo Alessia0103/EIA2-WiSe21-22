@@ -15,6 +15,7 @@ namespace Doenerbude {
             constructor(_position: Vector, _color: string, _colors: string) {
                 super(_position);
                 this.color = _color;
+                this.velocity.set(150, 0);
                 this.strokecolor = _colors;
                 
             }
@@ -34,7 +35,7 @@ namespace Doenerbude {
 
         setTimeout(() => {
             this.strokecolor = "#BF4A30";
-        },         35000);
+        },         3500);
     
     }
     
@@ -51,6 +52,7 @@ public move(): void {
 
             this.destination.x -= distance;
             this.destination.y -= distance;
+            this.velocity.set(150, 0);
             this.startMoving = false;
         }
         direction.scale(1 / 50);
@@ -60,4 +62,7 @@ public move(): void {
         } else {
             this.position.add(direction);
         }
+        setTimeout(() => {
+            this.velocity.set(450, 0);
+        },         3500);
     }}}}

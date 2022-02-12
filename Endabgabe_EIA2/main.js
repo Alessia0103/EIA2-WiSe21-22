@@ -3,8 +3,8 @@ var Doenerbude;
 (function (Doenerbude) {
     Doenerbude.test = [];
     let lastFrame;
-    Doenerbude.dx = 2;
-    Doenerbude.dy = -2;
+    Doenerbude.dx = 0;
+    Doenerbude.dy = 1;
     let landingPage;
     let startbutton;
     const neu = document.getElementById("redo");
@@ -44,12 +44,13 @@ var Doenerbude;
         landingPage.style.display = "none";
         canvas.classList.remove("is-hidden");
         gemuese.classList.remove("is-hidden");
+        moodStaff();
         getUserPreferences();
         Doenerbude.doenerladen = new Doenerbude.Laden();
         staff();
-        Doenerbude.middleX = Doenerbude.crc2.canvas.width / 2;
-        Doenerbude.middleY = Doenerbude.crc2.canvas.height / 2;
-        Doenerbude.customerSpawnPoint = new Doenerbude.Vector(50, Doenerbude.middleY);
+        Doenerbude.middleY += Doenerbude.dx;
+        Doenerbude.middleX -= Doenerbude.dy;
+        Doenerbude.customerSpawnPoint = new Doenerbude.Vector(1150, 300);
         lastFrame = performance.now();
         update();
         setInterval(customerLeave, 4100);
@@ -67,10 +68,8 @@ var Doenerbude;
         }
     }
     function newCustomer() {
-        Doenerbude.dx += Doenerbude.middleY;
-        Doenerbude.dy += Doenerbude.middleX;
         if (Doenerbude.test.length < 5) {
-            Doenerbude.test.push(new Doenerbude.Customer(new Doenerbude.Vector(Doenerbude.customerSpawnPoint.x, Doenerbude.customerSpawnPoint.y)));
+            Doenerbude.test.push(new Doenerbude.Human(new Doenerbude.Vector(Doenerbude.customerSpawnPoint.x, Doenerbude.customerSpawnPoint.y)));
             console.log("weg");
         }
     }
@@ -79,13 +78,11 @@ var Doenerbude;
         console.log("weg");
     }
     function update() {
-        const customer = new Doenerbude.Customer(new Doenerbude.Vector(Doenerbude.crc2.canvas.width / 0, 0));
         let frameTime = performance.now() - lastFrame;
         lastFrame = performance.now();
         for (let person of Doenerbude.test) {
             person.move(frameTime / 1000);
             person.draw();
-            moveables.push(customer);
         }
         window.requestAnimationFrame(update);
     }
@@ -174,6 +171,10 @@ var Doenerbude;
         Doenerbude.sali = new Doenerbude.Ali(new Doenerbude.Vector(500, 600), teamAColor, tamAMood);
         moveables.push(Doenerbude.dali);
         moveables.push(Doenerbude.sali);
+    }
+    function moodStaff() {
+        tamAMood = "#BF4A30";
+        console.log("color");
     }
     function getUserPreferences() {
         let formData = new FormData(document.forms[0]);
