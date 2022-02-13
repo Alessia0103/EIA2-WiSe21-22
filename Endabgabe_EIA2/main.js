@@ -16,10 +16,13 @@ var Doenerbude;
     const doneButtonTom = document.getElementById("buttontom");
     const doneButtonGur = document.getElementById("buttongur");
     const doneButtonZwi = document.getElementById("buttonzwi");
+    const finishOrder = document.querySelector("button");
     const plus = document.getElementById("plus");
     const text = document.getElementById("text-redo");
     let teamAColor = "66b2ff";
-    let tamAMood = "#2F7360";
+    let tamAMood = "#1C5948";
+    let teamBColor = "8C7B7B";
+    let teamBMood = "#1C5948";
     let buttonClickSal = 2;
     let buttonClickOn = 2;
     let buttonClickFlei = 2;
@@ -45,17 +48,17 @@ var Doenerbude;
         canvas.classList.remove("is-hidden");
         gemuese.classList.remove("is-hidden");
         moodStaff();
+        moodCustomer();
         getUserPreferences();
         Doenerbude.doenerladen = new Doenerbude.Laden();
         staff();
         Doenerbude.middleX = Doenerbude.dx;
         Doenerbude.middleY = Doenerbude.dy;
-        Doenerbude.customerSpawnPoint = new Doenerbude.Vector(1150, 300);
+        Doenerbude.customerSpawnPoint = new Doenerbude.Vector(1000, 325);
         lastFrame = performance.now();
         update();
-        setInterval(customerLeave, 4100);
         newCustomer();
-        window.setInterval(newCustomer, 2900);
+        window.setInterval(newCustomer, 4900);
         window.setInterval(drawUpdate, 20);
         window.setInterval(function () {
             animationUpdate();
@@ -69,10 +72,18 @@ var Doenerbude;
     }
     function newCustomer() {
         if (Doenerbude.test.length < 5) {
-            Doenerbude.test.push(new Doenerbude.Human(new Doenerbude.Vector(Doenerbude.customerSpawnPoint.x, Doenerbude.customerSpawnPoint.y)));
+            Doenerbude.test.push(new Doenerbude.Human(new Doenerbude.Vector(Doenerbude.customerSpawnPoint.x, Doenerbude.customerSpawnPoint.y), teamBColor, teamBMood));
             console.log("weg");
         }
     }
+    function moodCustomer() {
+        teamBMood = "#1C5948";
+        console.log("color");
+    }
+    finishOrder.addEventListener("click", function () {
+        console.log("red");
+        customerLeave();
+    });
     function customerLeave() {
         Doenerbude.test[0].receiveFood();
         console.log("weg");
@@ -173,12 +184,13 @@ var Doenerbude;
         moveables.push(Doenerbude.sali);
     }
     function moodStaff() {
-        tamAMood = "#BF4A30";
+        tamAMood = "#1C5948";
         console.log("color");
     }
     function getUserPreferences() {
         let formData = new FormData(document.forms[0]);
         teamAColor = formData.get("memberColorPicker");
+        teamBColor = formData.get("customerColorPicker");
     }
     function handleCanvasClick(_event) {
         if (_event.shiftKey || _event.altKey) {

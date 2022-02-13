@@ -11,6 +11,7 @@ namespace  Doenerbude {
     export let customerSpawnPoint: Vector;
     export let dx: number  = 0;
     export let dy: number  = 1;
+   
     
     
   
@@ -25,10 +26,13 @@ namespace  Doenerbude {
     const doneButtonTom: Element = (document.getElementById("buttontom")as HTMLInputElement);
     const doneButtonGur: Element = (document.getElementById("buttongur")as HTMLInputElement);
     const doneButtonZwi: Element = (document.getElementById("buttonzwi")as HTMLInputElement);
+    const finishOrder: Element = (document.querySelector("button")as HTMLInputElement);
     const plus: Element = (document.getElementById("plus")as HTMLInputElement);
     const text: Element = (document.getElementById("text-redo")as HTMLInputElement);
     let teamAColor: string = "66b2ff";
-    let tamAMood: string = "#2F7360";
+    let tamAMood: string = "#1C5948";
+    let teamBColor: string = "8C7B7B";
+    let teamBMood: string = "#1C5948";
     
     
     
@@ -68,6 +72,9 @@ namespace  Doenerbude {
         
         gemuese.classList.remove("is-hidden");
         moodStaff();
+        moodCustomer();
+
+       
 
         getUserPreferences();
 
@@ -77,15 +84,15 @@ namespace  Doenerbude {
         middleX = dx;
         middleY = dy;
 
-        customerSpawnPoint = new Vector(1150, 300);
+        customerSpawnPoint = new Vector(1000, 325);
         
         
         lastFrame = performance.now();
         update();
 
-        setInterval(customerLeave, 4100);
+        
         newCustomer();
-        window.setInterval(newCustomer, 2900); 
+        window.setInterval(newCustomer, 4900); 
 
         window.setInterval(drawUpdate, 20);
 
@@ -94,6 +101,8 @@ namespace  Doenerbude {
         },                 20);
         
 }
+
+
   
     function drawUpdate(): void {
     doenerladen.draw();
@@ -106,12 +115,23 @@ namespace  Doenerbude {
     function newCustomer(): void {
     
         if (test.length < 5) {
-            test.push(new Human(new Vector(customerSpawnPoint.x, customerSpawnPoint.y)));
-       
-    
+            test.push(new Human(new Vector(customerSpawnPoint.x, customerSpawnPoint.y), teamBColor, teamBMood));
+            
             console.log("weg");
     }
 }
+
+    function moodCustomer(): void {
+
+    teamBMood = "#1C5948";
+    console.log("color");
+} 
+
+
+    finishOrder.addEventListener("click",  function(): void {
+        console.log("red");
+        customerLeave();
+});
     function customerLeave(): void {
     test[0].receiveFood();
     console.log("weg");
@@ -128,9 +148,13 @@ namespace  Doenerbude {
     }
     window.requestAnimationFrame(update);
 }
+
+   
+
     export function removeCustomer(_customer: Human): void {
-    test.splice(test.indexOf(_customer), 1);
-}
+        test.splice(test.indexOf(_customer), 1);
+        
+    }
     
 
     doneButtonSal.addEventListener("click", function (): void {
@@ -239,9 +263,11 @@ namespace  Doenerbude {
             moveables.push(sali);
          
     }
+
+
     function moodStaff(): void {
 
-            tamAMood = "#BF4A30";
+            tamAMood = "#1C5948";
             console.log("color");
      }        
    
@@ -251,6 +277,7 @@ namespace  Doenerbude {
 
         let formData: FormData = new FormData(document.forms[0]); 
         teamAColor = <string>formData.get("memberColorPicker"); 
+        teamBColor = <string>formData.get("customerColorPicker");
     }
 
     function handleCanvasClick(_event: MouseEvent): void {

@@ -279,14 +279,14 @@ var Doenerbude;
     function GurkeEle() {
         document.querySelector(".gurkeküche").innerHTML = "" + gurkekitchen;
     }
-    const doener = document.getElementById("doener");
-    const yufka = document.getElementById("yufka");
-    const taco = document.getElementById("taco");
+    Doenerbude.doener = document.getElementById("doener");
+    Doenerbude.yufka = document.getElementById("yufka");
+    Doenerbude.taco = document.getElementById("taco");
     var doenerzahl = 0;
     var yufkazahl = 0;
     var tacozahl = 0;
     var totaleges;
-    doener.addEventListener("click", function () {
+    Doenerbude.doener.addEventListener("click", function () {
         doenerzahl++;
         totaleges = (doenerzahl) * 4 + (yufkazahl) * 3 + (tacozahl) * 2;
         doenerele();
@@ -295,7 +295,7 @@ var Doenerbude;
     function doenerele() {
         document.querySelector(".doenerzahl").innerHTML = "Anzahl Döner verkauft: " + doenerzahl;
     }
-    yufka.addEventListener("click", function () {
+    Doenerbude.yufka.addEventListener("click", function () {
         yufkazahl++;
         totaleges = (doenerzahl) * 4 + (yufkazahl) * 3 + (tacozahl) * 2;
         yufkaele();
@@ -304,7 +304,7 @@ var Doenerbude;
     function yufkaele() {
         document.querySelector(".yufkazahl").innerHTML = "Anzahl Yufka verkauft: " + yufkazahl;
     }
-    taco.addEventListener("click", function () {
+    Doenerbude.taco.addEventListener("click", function () {
         tacozahl++;
         totaleges = (doenerzahl) * 4 + (yufkazahl) * 3 + (tacozahl) * 2;
         tacoele();

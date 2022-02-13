@@ -8,27 +8,38 @@ namespace Doenerbude {
     
     export class Human extends Moveable { 
         public state: STATE;
+        public strokecolore: string;
+        public color: string;
     
       
 
-        constructor(_position: Vector) {
+        constructor(_position: Vector, _color: string, _coloros: string ) {
             super(_position);
             this.velocity.set(150, 0);
             this.state = STATE.QUEUE;
-            middleX = crc2.canvas.width;
-            middleY = crc2.canvas.height / 2;
-            dx  = 0;
-            dy = 10;
+            this.color = _color;
+            this.strokecolore = _coloros;
+           
         }
 
     public draw(): void {
             crc2.save();
-            crc2.fillStyle = "yellow";
-            crc2.translate(this.position.x, this.position.y);
             crc2.beginPath();
+            crc2.translate(this.position.x, this.position.y);
             crc2.arc(0, 0, 30, 0, 360);
+            
+            crc2.stroke();
+            crc2.lineWidth = 10;
+            crc2.strokeStyle = this.strokecolore;
+            crc2.fillStyle = this.color;
             crc2.fill();
             crc2.restore();
+
+
+            setTimeout(() => {
+                this.strokecolore = "black";
+            },         35000);
+            
         }
     
     public move(_timeslice: number): void {
@@ -54,10 +65,13 @@ namespace Doenerbude {
             }
                 break;
             case STATE.LEAVING: 
-        if (this.position.y > crc2.canvas.height + 0)
-                removeCustomer(this);
-        }
-        }
+            
+            if (this.position.y > crc2.canvas.height - 0)
+       
+            removeCustomer(this);
+      
+    }
+    }
         public receiveFood(): void {
             this.velocity.set(0, 150);
             this.state = STATE.LEAVING;

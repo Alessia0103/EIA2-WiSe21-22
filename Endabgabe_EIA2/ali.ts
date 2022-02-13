@@ -63,6 +63,6 @@ public move(): void {
             this.position.add(direction);
         }
         setTimeout(() => {
-            this.velocity.set(450, 0);
+            this.velocity.set(150, 0);
         },         3500);
     }}}}

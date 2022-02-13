@@ -286,9 +286,9 @@ namespace Doenerbude {
         (document.querySelector(".gurkeküche")as HTMLInputElement).innerHTML = "" + gurkekitchen; }
 
     
-    const doener: Element = (document.getElementById("doener")as HTMLInputElement);
-    const yufka: Element = (document.getElementById("yufka")as HTMLInputElement);
-    const taco: Element = (document.getElementById("taco")as HTMLInputElement);
+    export const doener: Element = (document.getElementById("doener")as HTMLInputElement);
+    export const yufka: Element = (document.getElementById("yufka")as HTMLInputElement);
+    export const taco: Element = (document.getElementById("taco")as HTMLInputElement);
     var doenerzahl: number = 0;
     var yufkazahl: number = 0;
     var tacozahl: number = 0;
@@ -329,6 +329,8 @@ namespace Doenerbude {
         totaleges = (doenerzahl) * 4 + (yufkazahl) * 3 + (tacozahl) * 2;
         tacoele();
         total();
+
+    
         
          });
                         

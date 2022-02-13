@@ -8,23 +8,27 @@ var Doenerbude;
         STATE[STATE["LEAVING"] = 2] = "LEAVING";
     })(STATE || (STATE = {}));
     class Human extends Doenerbude.Moveable {
-        constructor(_position) {
+        constructor(_position, _color, _coloros) {
             super(_position);
             this.velocity.set(150, 0);
             this.state = STATE.QUEUE;
-            Doenerbude.middleX = Doenerbude.crc2.canvas.width;
-            Doenerbude.middleY = Doenerbude.crc2.canvas.height / 2;
-            Doenerbude.dx = 0;
-            Doenerbude.dy = 10;
+            this.color = _color;
+            this.strokecolore = _coloros;
         }
         draw() {
             Doenerbude.crc2.save();
-            Doenerbude.crc2.fillStyle = "yellow";
-            Doenerbude.crc2.translate(this.position.x, this.position.y);
             Doenerbude.crc2.beginPath();
+            Doenerbude.crc2.translate(this.position.x, this.position.y);
             Doenerbude.crc2.arc(0, 0, 30, 0, 360);
+            Doenerbude.crc2.stroke();
+            Doenerbude.crc2.lineWidth = 10;
+            Doenerbude.crc2.strokeStyle = this.strokecolore;
+            Doenerbude.crc2.fillStyle = this.color;
             Doenerbude.crc2.fill();
             Doenerbude.crc2.restore();
+            setTimeout(() => {
+                this.strokecolore = "black";
+            }, 35000);
         }
         move(_timeslice) {
             super.move(_timeslice);
@@ -46,7 +50,7 @@ var Doenerbude;
                     }
                     break;
                 case STATE.LEAVING:
-                    if (this.position.y > Doenerbude.crc2.canvas.height + 0)
+                    if (this.position.y > Doenerbude.crc2.canvas.height - 0)
                         Doenerbude.removeCustomer(this);
             }
         }
