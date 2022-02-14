@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <title>Endabgabe Dönerbude</title>
     <link type="text/css" rel="stylesheet" href="css.css">
-    <script src="vector.js" defer></script>
-    <script src="movable.js" defer></script>
-    <script src="customer_human.js" defer></script>
-    <script src="customer.js" defer></script>
-    <script src="Doener.js" defer></script>
-    <script src="gemüse.js" defer></script>
-    <script src="ali.js" defer></script>
-    <script src="main.js" defer></script>
+    <script src="Script/vector.js" defer></script>
+    <script src="Script/movable.js" defer></script>
+    <script src="Script/customer_human.js" defer></script>
+    <script src="Script/Doener.js" defer></script>
+    <script src="Script/gemüse.js" defer></script>
+    <script src="Script/ali.js" defer></script>
+    <script src="Script/main.js" defer></script>
    
     
     
@@ -20,6 +19,9 @@
     <div class="header">DÖNERBUDEN SIMULATOR</div>
     <div class="container">
         <canvas id="canvas" width="1300" height="700"></canvas>
+        
+
+      
 
     <div class="settingscontainer">
         <div id="settings">
@@ -53,6 +55,15 @@
         </div>
         </div>
     </div>
+    <span id="instructionBoard" class="is-hidden"> 
+        <ul>
+            <strong><u>Game Instructions:</u></strong> 
+        <li><b>Move employee:</b> Employee 1 (shift + Mousemove), Employee 2 (alt + Mousemove)</li>
+        <li><b>Get Order done:</b> Click in the right order, on the randsom ingredients. </li>
+        <li><b>Finish Order:</b> Finish the order, after that click an the button an the next customer will come forward</li>
+        </ul>
+    </span>
+    <img id="question" src="Emojis/question.png" >
         <!--- Salat--->
         <div id="gemuese" class="is-hidden">
 
@@ -72,14 +83,19 @@
               <img id="doener" src="Emojis/stuffed-flatbread-apple.png">
               <img id="yufka" src="Emojis/burrito-apple.png">
               <img id="taco" src="Emojis/taco-apple.png">
-            <img id="redo" src="update-arrow.png" >
+            <img id="redo" src="Emojis/update-arrow.png" >
+            
+
+        <div class="yufka">3,00 €</div>
+        <div class="doener">4,00 €</div>
+        <div class="taco">2,00 €</div>
         </div>  
 
 
         <div class="salad">10</div>
         <div class="saladküche">10</div>
         <img id="salad-küche" src="Emojis/green-salad-apple.png">
-        <img id="buttonsal" class="is-hidden"src="web-button.png" >
+        <img id="buttonsal" class="is-hidden"src="Emojis/web-button.png" >
         <img id="salad-theke" src="Emojis/green-salad-apple.png">
         <img id="counter" class="is-hidden" src="Emojis/loading-buffering.gif">
         
@@ -87,7 +103,7 @@
         <div class="zwiebel">10</div>
         <div class="zwiebelküche">10</div>
         <img id="zwiebel-küche" src="Emojis/onion-apple.png">
-        <img id="buttonzwi" class="is-hidden"src="web-button.png" >
+        <img id="buttonzwi" class="is-hidden"src="Emojis/web-button.png" >
         <img id="zwiebel-theke" src="Emojis/onion-apple.png">
         <img id="counterzwi" class="is-hidden" src="Emojis/loading-buffering.gif">
          
@@ -95,7 +111,7 @@
          <div class="gurke">10</div>
          <div class="gurkeküche">10</div>
          <img id="gurke-küche" src="Emojis/cucumber-apple.png">
-         <img id="buttongur" class="is-hidden"src="web-button.png" >
+         <img id="buttongur" class="is-hidden"src="Emojis/web-button.png" >
          <img id="gurke-theke" src="Emojis/cucumber-apple.png">
          <img id="countergur" class="is-hidden" src="Emojis/loading-buffering.gif">
          
@@ -103,7 +119,7 @@
          <div class="tomate">10</div>
          <div class="tomateküche">10</div>
          <img id="tomate-küche" src="Emojis/tomato-apple.png">
-         <img id="buttontom" class="is-hidden"src="web-button.png" >
+         <img id="buttontom" class="is-hidden"src="Emojis/web-button.png" >
          <img id="tomate-theke" src="Emojis/tomato-apple.png">
          <img id="countertom" class="is-hidden" src="Emojis/loading-buffering.gif">
          
@@ -111,20 +127,25 @@
          <div class="fleisch">10</div>
          <div class="fleischküche">10</div>
          <img id="fleisch-küche" src="Emojis/cut-of-meat-apple.png">
-         <img id="buttonflei" class="is-hidden"src="web-button.png" >
+         <img id="buttonflei" class="is-hidden"src="Emojis/web-button.png" >
          <img id="fleisch-theke" src="Emojis/cut-of-meat-apple.png">
          <img id="counterflei" class="is-hidden" src="Emojis/loading-buffering.gif">
-         <img id="plus" src="hinzufugen.png">
+         <img id="plus" src="Emojis/hinzufugen.png">
 
          <img src="Emojis/cucumber-apple.png" class="is-hidden" id="random_img" alt="Random Image">
          <img src="Emojis/cucumber-apple.png" class="is-hidden" id="random_img2" alt="Random Image">
          <img src="Emojis/stuffed-flatbread-apple.png" class="is-hidden" id="random_img3" alt="Random Image">
         </div>
-        <img id="redo" class="is-hidden" src="update-arrow.png" ></div>
+        
         <div id="text-redo" class="is-hidden"> Neue Simulation starten</div>
-        <img id="redo-newGame" class="is-hidden" src="update-arrow.png" ></div>
+        <img id="redo-newGame" class="is-hidden" src="Emojis/update-arrow.png" ></div>
+
+        
         
     </div>
+    <footer id="footer">
+        &#169; 2021 by Alessia Carbone, MKB3, Matrikel-Nr.: 266620, Endabgabe EIA2, Hochschule Furtwangen University
+    </footer>
          
 </div>
 </body>
