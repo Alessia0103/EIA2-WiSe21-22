@@ -35,7 +35,7 @@ namespace Doenerbude {
 
         setTimeout(() => {
             this.strokecolor = "#BF4A30";
-        },         3500);
+        },         3500000);
     
     }
     

@@ -23,7 +23,7 @@ var Doenerbude;
             Doenerbude.crc2.fill();
             setTimeout(() => {
                 this.strokecolor = "#BF4A30";
-            }, 3500);
+            }, 3500000);
         }
         move() {
             if (this.destination) {
