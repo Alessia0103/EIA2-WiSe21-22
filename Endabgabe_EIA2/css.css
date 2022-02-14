@@ -10,6 +10,20 @@ html{
     align-items: center;
     justify-content: center; 
 }
+#instructionBoard{
+    top:180px;
+    font-size: 15px;
+    left: 780px;
+    width : 290px;
+    height: 180px;
+    position: absolute;
+    display: flex;
+    margin-bottom:0px;
+    font-family:Arial, Helvetica, sans-serif;
+    color: #262523;
+    background-color:#F2DDCC;
+    justify-content: center;
+}
 #plus{
     top:730px;
     width : 50px;
@@ -103,6 +117,21 @@ html{
     background-color:#F2DDCC;
     width : 100px;
     height: 100px;
+
+}
+#question{
+    top: 80px;
+    width : 50px;
+    height: 50px;
+    left: 1300px;
+    position: absolute;
+    display: flex;
+    margin-bottom:0px;
+    opacity: 100%;
+    justify-content: center;
+    background-color:#F2DDCC;
+    opacity: 80%;
+    cursor: pointer;
 
 }
 .menüleiste{
@@ -332,6 +361,39 @@ html{
     opacity: 70%;
     justify-content: center;
 }
+.doener{
+    top:230px;
+    width: 30px;
+    left: 1140px;
+    position: absolute;
+    display: flex;
+    font-size: 10px;
+    background-color: #73645F;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+.yufka{
+    top:230px;
+    width: 30px;
+    left: 1230px;
+    position: absolute;
+    display: flex;
+    font-size: 10px;
+    background-color: #73645F;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+.taco{
+    top:230px;
+    width: 30px;
+    left: 1330px;
+    position: absolute;
+    display: flex;
+    font-size: 10px;
+    background-color: #73645F;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
 
 .menu{
     
@@ -353,6 +415,7 @@ html{
     margin-bottom:0px;
     opacity: 100%;
     justify-content: center;
+    cursor: pointer;
 }
 #yufka{
     top:180px;
@@ -363,6 +426,7 @@ html{
     margin-bottom:0px;
     opacity: 100%;
     justify-content: center;
+    cursor: pointer;
 }
 #taco{
     top:180px;
@@ -373,6 +437,7 @@ html{
     margin-bottom:0px;
     opacity: 100%;
     justify-content: center;
+    cursor: pointer;
 }
 #counter{
     top:160px;
@@ -649,4 +714,17 @@ html{
     opacity: 100%;
     cursor: pointer;
     justify-content: center;
+}
+#footer{
+    
+    position: absolute;
+    display: flex;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    margin-left: auto;
+	margin-right: auto;
+	max-width: -webkit-max-content;  /* für Safari */	
+	max-width: -moz-max-content;     /* für Firefox */
+	text-align: center;
 }

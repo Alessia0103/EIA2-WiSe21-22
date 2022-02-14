@@ -14,7 +14,8 @@ namespace  Doenerbude {
    
     
     
-  
+    let instructionbutton: HTMLSpanElement;
+    let instructionBoard: Element;
     let landingPage: HTMLDivElement;
     let startbutton: HTMLDivElement;
     const neu: Element = (document.getElementById("redo")as HTMLInputElement);
@@ -56,9 +57,15 @@ namespace  Doenerbude {
             if (!canvas)
                 return;
             crc2 = <CanvasRenderingContext2D>canvas.getContext("2d");
+            instructionbutton = <HTMLDivElement>document.getElementById("question");
+            instructionBoard = <HTMLSpanElement>document.querySelector("#instructionBoard");
            
             landingPage = <HTMLDivElement>document.getElementById("settings");
             startbutton = <HTMLDivElement>document.getElementById("startbutton");
+          
+
+
+            instructionbutton.addEventListener("click", showInstruction);
 
             startbutton.addEventListener("click", startSimulation);
             canvas.addEventListener("click", mitarbeiter1);
@@ -75,7 +82,6 @@ namespace  Doenerbude {
         moodCustomer();
 
        
-
         getUserPreferences();
 
         doenerladen = new Laden();
@@ -100,6 +106,18 @@ namespace  Doenerbude {
                animationUpdate();
         },                 20);
         
+}
+
+    function showInstruction(): void {
+        console.log("HI");
+
+        if (instructionBoard.classList.contains("is-hidden")) {
+        instructionBoard.classList.remove("is-hidden");
+        instructionBoard.classList.add("visible");
+    } else if (instructionBoard.classList.contains("visible")) {
+        instructionBoard.classList.remove("visible");
+        instructionBoard.classList.add("is-hidden");
+    }
 }
 
 

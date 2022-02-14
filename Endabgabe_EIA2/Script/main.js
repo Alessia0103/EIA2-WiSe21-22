@@ -5,6 +5,8 @@ var Doenerbude;
     let lastFrame;
     Doenerbude.dx = 0;
     Doenerbude.dy = 1;
+    let instructionbutton;
+    let instructionBoard;
     let landingPage;
     let startbutton;
     const neu = document.getElementById("redo");
@@ -36,8 +38,11 @@ var Doenerbude;
         if (!canvas)
             return;
         Doenerbude.crc2 = canvas.getContext("2d");
+        instructionbutton = document.getElementById("question");
+        instructionBoard = document.querySelector("#instructionBoard");
         landingPage = document.getElementById("settings");
         startbutton = document.getElementById("startbutton");
+        instructionbutton.addEventListener("click", showInstruction);
         startbutton.addEventListener("click", startSimulation);
         canvas.addEventListener("click", mitarbeiter1);
         canvas.addEventListener("click", handleCanvasClick);
@@ -63,6 +68,17 @@ var Doenerbude;
         window.setInterval(function () {
             animationUpdate();
         }, 20);
+    }
+    function showInstruction() {
+        console.log("HI");
+        if (instructionBoard.classList.contains("is-hidden")) {
+            instructionBoard.classList.remove("is-hidden");
+            instructionBoard.classList.add("visible");
+        }
+        else if (instructionBoard.classList.contains("visible")) {
+            instructionBoard.classList.remove("visible");
+            instructionBoard.classList.add("is-hidden");
+        }
     }
     function drawUpdate() {
         Doenerbude.doenerladen.draw();
