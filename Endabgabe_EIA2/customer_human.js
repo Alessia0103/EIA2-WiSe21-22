@@ -10,7 +10,7 @@ var Doenerbude;
     class Human extends Doenerbude.Moveable {
         constructor(_position, _color, _coloros) {
             super(_position);
-            this.velocity.set(150, 0);
+            this.velocity.set(-150, 0);
             this.state = STATE.QUEUE;
             this.color = _color;
             this.strokecolore = _coloros;

@@ -15,7 +15,7 @@ namespace Doenerbude {
 
         constructor(_position: Vector, _color: string, _coloros: string ) {
             super(_position);
-            this.velocity.set(150, 0);
+            this.velocity.set(-150, 0);
             this.state = STATE.QUEUE;
             this.color = _color;
             this.strokecolore = _coloros;
@@ -67,7 +67,6 @@ namespace Doenerbude {
             case STATE.LEAVING: 
             
             if (this.position.y > crc2.canvas.height - 0)
-       
             removeCustomer(this);
       
     }
