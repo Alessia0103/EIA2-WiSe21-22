@@ -33,9 +33,16 @@ namespace Doenerbude {
         crc2.fillStyle = this.color;
         crc2.fill();
 
+        //Average Mood
+        crc2.beginPath();
+        crc2.rect(825, 100, 180, 10);
+        crc2.closePath();
+        crc2.fillStyle = this.strokecolor;
+        crc2.fill();
+
         setTimeout(() => {
             this.strokecolor = "#BF4A30";
-        },         3500000);
+        },         350000);
     
     }
     

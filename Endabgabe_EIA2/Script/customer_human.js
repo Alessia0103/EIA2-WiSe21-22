@@ -20,15 +20,25 @@ var Doenerbude;
             Doenerbude.crc2.beginPath();
             Doenerbude.crc2.translate(this.position.x, this.position.y);
             Doenerbude.crc2.arc(0, 0, 30, 0, 360);
-            Doenerbude.crc2.stroke();
-            Doenerbude.crc2.lineWidth = 10;
-            Doenerbude.crc2.strokeStyle = this.strokecolore;
             Doenerbude.crc2.fillStyle = this.color;
             Doenerbude.crc2.fill();
             Doenerbude.crc2.restore();
+            Doenerbude.crc2.save();
+            Doenerbude.crc2.beginPath();
+            Doenerbude.crc2.translate(this.position.x, this.position.y);
+            Doenerbude.crc2.arc(0, 0, 20, 0, 360);
+            Doenerbude.crc2.fillStyle = this.strokecolore;
+            Doenerbude.crc2.fill();
+            Doenerbude.crc2.restore();
+            //Average Mood
+            Doenerbude.crc2.beginPath();
+            Doenerbude.crc2.rect(825, 150, 180, 10);
+            Doenerbude.crc2.closePath();
+            Doenerbude.crc2.fillStyle = this.strokecolore;
+            Doenerbude.crc2.fill();
             setTimeout(() => {
-                this.strokecolore = "black";
-            }, 35000);
+                this.strokecolore = "#A63C3C";
+            }, 15000);
         }
         move(_timeslice) {
             super.move(_timeslice);

@@ -21,9 +21,15 @@ var Doenerbude;
             Doenerbude.crc2.strokeStyle = this.strokecolor;
             Doenerbude.crc2.fillStyle = this.color;
             Doenerbude.crc2.fill();
+            //Average Mood
+            Doenerbude.crc2.beginPath();
+            Doenerbude.crc2.rect(825, 100, 180, 10);
+            Doenerbude.crc2.closePath();
+            Doenerbude.crc2.fillStyle = this.strokecolor;
+            Doenerbude.crc2.fill();
             setTimeout(() => {
                 this.strokecolor = "#BF4A30";
-            }, 3500000);
+            }, 350000);
         }
         move() {
             if (this.destination) {

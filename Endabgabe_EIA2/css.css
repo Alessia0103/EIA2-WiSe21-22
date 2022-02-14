@@ -11,10 +11,10 @@ html{
     justify-content: center; 
 }
 #instructionBoard{
-    top:180px;
+    top:580px;
     font-size: 15px;
     left: 780px;
-    width : 290px;
+    width : 370px;
     height: 180px;
     position: absolute;
     display: flex;
@@ -279,6 +279,34 @@ html{
     cursor: pointer;
     justify-content: center;
     color: white;
+
+}
+.moodStaff{
+    top:170px;
+    font-size: 10px;
+    left: 925px;
+    position: absolute;
+    display: flex;
+    margin-bottom:0px;
+    font-family:Arial, Helvetica, sans-serif;
+    color: #262523;
+    font-weight: bold;
+    cursor: pointer;
+    justify-content: center;
+
+}
+.moodcustomer{
+    top:220px;
+    font-size: 10px;
+    left: 925px;
+    position: absolute;
+    display: flex;
+    margin-bottom:0px;
+    font-family:Arial, Helvetica, sans-serif;
+    color: #262523;
+    font-weight: bold;
+    cursor: pointer;
+    justify-content: center;
 
 }
 .canvas {

@@ -34,9 +34,14 @@
     
                 <fieldset>
                             <legend> <b>Kunden pro Tag</b> </legend>
-                            <input type="range" id="customer" name="customer" value="5" min="4" max="6">
+                            <input type="range" id="customer" name="customer" value="3" min="4" max="6">
                             <br>
                 </fieldset>
+                <fieldset>
+                    <legend> <b>Inventar</b> </legend>
+                    <input type="range" id="inventa" name="inventa" value="3" min="4" max="6">
+                    <br>
+        </fieldset>
     
             
                 <fieldset>
@@ -59,8 +64,8 @@
         <ul>
             <strong><u>Game Instructions:</u></strong> 
         <li><b>Move employee:</b> Employee 1 (shift + Mousemove), Employee 2 (alt + Mousemove)</li>
-        <li><b>Get Order done:</b> Click in the right order, on the randsom ingredients. </li>
-        <li><b>Finish Order:</b> Finish the order, after that click an the button an the next customer will come forward</li>
+        <li><b>Get Order:</b> The order will appear with the plus button. Then tap the respective ingredients and the dish in order </li>
+        <li><b>Finish Order:</b> complete the order by pressing the respective button. The next customer will come forword automatically </li>
         </ul>
     </span>
     <img id="question" src="Emojis/question.png" >
@@ -69,6 +74,8 @@
 
           <div id="menüleiste">
             <div class="menu">Mögliche Gerichte</div>
+            <div class="moodStaff">Stimmung der Mitarbeiter</div>
+            <div class="moodcustomer">Stimmung der Kunden</div>
             <div class="Info">Informationen:</div>
             <div class="fleischzahl">Anzahl Fleisch verkauft:</div>
             <div class="tomatezahl">Anzahl Tomaten verkauft:</div>

@@ -121,6 +121,12 @@ var Doenerbude;
             Doenerbude.crc2.closePath();
             Doenerbude.crc2.fillStyle = "white";
             Doenerbude.crc2.fill();
+            //Average Mood
+            Doenerbude.crc2.beginPath();
+            Doenerbude.crc2.rect(805, 50, 220, 120);
+            Doenerbude.crc2.closePath();
+            Doenerbude.crc2.fillStyle = "#D2D8D9";
+            Doenerbude.crc2.fill();
         }
     }
     Doenerbude.Laden = Laden;

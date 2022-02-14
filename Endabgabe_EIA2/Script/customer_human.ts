@@ -10,6 +10,7 @@ namespace Doenerbude {
         public state: STATE;
         public strokecolore: string;
         public color: string;
+       
     
       
 
@@ -19,7 +20,6 @@ namespace Doenerbude {
             this.state = STATE.QUEUE;
             this.color = _color;
             this.strokecolore = _coloros;
-           
         }
 
     public draw(): void {
@@ -28,19 +28,35 @@ namespace Doenerbude {
             crc2.translate(this.position.x, this.position.y);
             crc2.arc(0, 0, 30, 0, 360);
             
-            crc2.stroke();
-            crc2.lineWidth = 10;
-            crc2.strokeStyle = this.strokecolore;
             crc2.fillStyle = this.color;
             crc2.fill();
             crc2.restore();
 
+            crc2.save();
+            crc2.beginPath();
+            crc2.translate(this.position.x, this.position.y);
+            crc2.arc(0, 0, 20, 0, 360);
+            crc2.fillStyle = this.strokecolore;
+            crc2.fill();
+            crc2.restore();
+
+            //Average Mood
+            crc2.beginPath();
+            crc2.rect(825, 150, 180, 10);
+            crc2.closePath();
+            crc2.fillStyle = this.strokecolore;
+            crc2.fill();
+
 
             setTimeout(() => {
-                this.strokecolore = "black";
-            },         35000);
+                this.strokecolore = "#A63C3C";
+            },         15000);
+            
+            
             
         }
+        
+        
     
     public move(_timeslice: number): void {
         

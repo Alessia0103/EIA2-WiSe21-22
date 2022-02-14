@@ -132,6 +132,14 @@ namespace Doenerbude {
         crc2.fillStyle = "white";
         crc2.fill();
 
+//Average Mood
+        crc2.beginPath();
+        crc2.rect(805, 50, 220, 120);
+        crc2.closePath();
+        crc2.fillStyle = "#D2D8D9";
+        crc2.fill();
+
+
         }
     }
 }
