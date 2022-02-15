@@ -336,7 +336,7 @@ namespace  Doenerbude {
         let ypos: number = 0;
         
         if (_event.altKey) {
-        if (_event.offsetX > 180 && _event.offsetX < 1030) {
+        if (_event.offsetX > 130 && _event.offsetX < 1030) {
             xpos = _event.offsetX;
         }
         if (_event.offsetY > 90 && _event.offsetY < 700) {
