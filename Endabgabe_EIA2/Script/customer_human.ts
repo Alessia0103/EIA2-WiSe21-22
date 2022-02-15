@@ -1,3 +1,14 @@
+/*
+Dönersimulation
+Alessia Carbone
+MKB3
+Matrikelnummer: 266620
+In Zusammenarbeit mit Neele Rauber kreiert
+*/
+
+//Inspiration für die Kunden von Amlie Dell'Oro
+
+
 namespace Doenerbude { 
 
     enum STATE {

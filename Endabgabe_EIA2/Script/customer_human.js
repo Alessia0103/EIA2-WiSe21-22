@@ -1,4 +1,12 @@
 "use strict";
+/*
+Dönersimulation
+Alessia Carbone
+MKB3
+Matrikelnummer: 266620
+In Zusammenarbeit mit Neele Rauber kreiert
+*/
+//Inspiration für die Kunden von Amlie Dell'Oro
 var Doenerbude;
 (function (Doenerbude) {
     let STATE;
